@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONE Lari Батуми | Доставка горячей еды и панкейков</title>
+    <!-- Подключаем Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Подключаем иконки FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Montserrat', sans-serif; }
+    </style>
+</head>
+<body class="bg-[#121212] text-gray-100 antialiased">
+
+    <!-- НАВИГАЦИЯ (МАКСИМАЛЬНЫЙ ФОКУС НА АДРЕС) -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-[#121212]/90 border-b border-white/10 shadow-lg">
+        <div class="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="text-xl font-extrabold tracking-wider text-amber-500">ONE LARI</div>
+                <div class="hidden xs:flex items-center bg-amber-500/10 text-amber-400 border border-amber-500/20 text-[11px] font-bold px-2.5 py-1 rounded-lg">
+                    <i class="fa-solid fa-location-dot mr-1.5"></i> Батуми, ул. Горгасали, 79
+                </div>
+            </div>
+            <a href="tel:+995511157979" class="text-sm font-semibold text-gray-300 hover:text-amber-500 transition flex items-center bg-white/5 border border-white/10 px-3 py-1.5 rounded-xl">
+                <i class="fa-solid fa-phone text-amber-500 mr-2"></i> +995 511 15 79 79
+            </a>
+        </div>
+    </header>
+
+    <!-- ГЛАВНЫЙ ЭКРАН (HERO) -->
+    <section class="relative py-12 px-4 max-w-4xl mx-auto text-center">
+        <div class="absolute inset-0 bg-gradient-to-b from-amber-500/10 to-transparent blur-3xl -z-10 rounded-full max-w-lg mx-auto"></div>
+        
+        <!-- Локальный тег -->
+        <span class="inline-flex items-center bg-amber-500/10 text-amber-400 text-xs px-3 py-1.5 rounded-full font-bold uppercase tracking-wide mb-6 border border-amber-500/20">
+            <i class="fa-solid fa-bolt mr-1.5 animate-pulse"></i> Экспресс-доставка по всему Батуми
+        </span>
+        
+        <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 leading-tight">
+            Горячая кухня из центра города <br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">
+                к вам домой за 30-45 минут
+            </span>
+        </h1>
+        
+        <p class="text-gray-400 text-sm md:text-base max-w-md mx-auto mb-8">
+            Находимся на пересечении Горгасали и Меликишвили. Еда просто не успеет остыть в дороге!
+        </p>
+        
+        <!-- ЛОКАЛЬНЫЕ КНОПКИ СКОРОСТНОГО ЗАКАЗА -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-md mx-auto px-4 mb-6">
+            <a href="https://wolt.com/en/geo/batumi/restaurant/one-lari" target="_blank" class="flex items-center justify-center bg-[#00c2e8] text-white font-extrabold py-3.5 rounded-xl hover:scale-[1.02] transition shadow-md group">
+                <i class="fa-solid fa-bicycle mr-2 group-hover:animate-bounce"></i> Заказать через Wolt
+            </a>
+            <a href="https://glovoapp.com/en/ge/batumi/stores/one-lari-bat" target="_blank" class="flex items-center justify-center bg-[#ffc244] text-black font-extrabold py-3.5 rounded-xl hover:scale-[1.02] transition shadow-md group">
+                <i class="fa-solid fa-motorcycle mr-2 group-hover:animate-bounce"></i> Заказать через Glovo
+            </a>
+        </div>
+        
+        <div class="flex justify-center px-4">
+            <a href="#menu" class="text-sm font-semibold text-amber-400 hover:text-amber-300 underline underline-offset-4 decoration-amber-500/50">
+                <i class="fa-solid fa-utensils mr-1"></i> Посмотреть меню и заказать напрямую дешевле
+            </a>
+        </div>
+    </section>
+
+    <!-- ЗОНЫ И СКОРОСТЬ ДОСТАВКИ -->
+    <section class="py-6 px-4 max-w-4xl mx-auto">
+        <div class="bg-white/5 border border-white/5 rounded-2xl p-4 grid grid-cols-1 md:grid-cols-3 gap-4 text-center items-center">
+            <div class="flex items-center justify-center gap-3 md:border-r border-white/10 py-2">
+                <i class="fa-solid fa-location-crosshairs text-2xl text-amber-500"></i>
+                <div class="text-left">
+                    <h4 class="text-xs font-bold uppercase text-gray-400">Рядом с вами</h4>
+                    <p class="text-sm font-bold text-white">Старый Батуми и центр</p>
+                </div>
+            </div>
+            <div class="flex items-center justify-center gap-3 md:border-r border-white/10 py-2">
+                <i class="fa-solid fa-truck-fast text-2xl text-amber-500"></i>
+                <div class="text-left">
+                    <h4 class="text-xs font-bold uppercase text-gray-400">Среднее время</h4>
+                    <p class="text-sm font-bold text-white">Доставка за 35 минут</p>
+                </div>
+            </div>
+            <div class="flex items-center justify-center gap-3 py-2">
+                <i class="fa-solid fa-bag-shopping text-2xl text-amber-500"></i>
+                <div class="text-left">
+                    <h4 class="text-xs font-bold uppercase text-gray-400">Самовывоз</h4>
+                    <p class="text-sm font-bold text-white">Скидка -10% (заберу сам)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- МЕНЮ -->
+    <section id="menu" class="py-12 px-4 max-w-4xl mx-auto">
+        <h2 class="text-2xl font-extrabold mb-8 border-l-4 border-amber-500 pl-3">Популярно в ONE Lari</h2>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            
+            <!-- Блюдо 1 -->
+            <div class="bg-white/5 rounded-2xl overflow-hidden border border-white/5 flex flex-col justify-between group hover:border-amber-500/30 transition duration-300">
+                <div class="relative h-48 bg-gray-800">
+                    <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=500&auto=format&fit=crop&q=60" alt="Панкейки Курица-Сыр" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <span class="absolute top-3 right-3 bg-black/70 backdrop-blur-md text-amber-400 font-bold px-3 py-1 rounded-lg text-sm">
+                        18 ₾
+                    </span>
+                </div>
+                <div class="p-5">
+                    <h3 class="text-lg font-bold mb-2">Панкейки Курица-Сыр</h3>
+                    <p class="text-gray-400 text-xs mb-4">4 нежных воздушных панкейка, сочное куриное филе, много тянущегося сыра. Идеальный сытный баланс!</p>
+                    <a href="https://t.me/YOUR_TELEGRAM_USERNAME?text=Хочу_заказать_Панкейки_Курица_Сыр" target="_blank" class="w-full inline-block text-center bg-white/5 hover:bg-amber-500 hover:text-black font-bold py-2.5 rounded-xl text-sm transition">
+                        Заказать в Telegram напрямую
+                    </a>
+                </div>
+            </div>
+
+            <!-- Блюдо 2 -->
+            <div class="bg-white/5 rounded-2xl overflow-hidden border border-white/5 flex flex-col justify-between group hover:border-amber-500/30 transition duration-300">
+                <div class="relative h-48 bg-gray-800">
+                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500&auto=format&fit=crop&q=60" alt="Комбо" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <span class="absolute top-3 right-3 bg-black/70 backdrop-blur-md text-amber-400 font-bold px-3 py-1 rounded-lg text-sm">
+                        25 ₾
+                    </span>
+                </div>
+                <div class="p-5">
+                    <h3 class="text-lg font-bold mb-2">Комбо-Завтрак "Дюжина"</h3>
+                    <p class="text-gray-400 text-xs mb-4">Большой сет: 12 фирменных сладких панкейков, нежнейший крем ONE Lari, шоколад и хрустящие орехи.</p>
+                    <a href="https://t.me/YOUR_TELEGRAM_USERNAME?text=Хочу_заказать_Комбо_Дюжина" target="_blank" class="w-full inline-block text-center bg-white/5 hover:bg-amber-500 hover:text-black font-bold py-2.5 rounded-xl text-sm transition">
+                        Заказать в Telegram напрямую
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ОФОРМЛЕНИЕ ЗАКАЗА НАПРЯМУЮ -->
+    <section class="py-12 px-4 max-w-4xl mx-auto">
+        <div class="bg-gradient-to-r from-amber-500/10 to-orange-500/10 rounded-3xl p-6 md:p-10 border border-amber-500/20 text-center">
+            <h2 class="text-2xl font-extrabold mb-2">Прямой заказ без переплат</h2>
+            <p class="text-gray-400 text-sm max-w-md mx-auto mb-6">
+                Напишите нам в чат — администратор моментально примет заказ, рассчитает время доставки до вашей улицы и отправит локального курьера.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-3 justify-center mb-8">
+                <a href="https://t.me/YOUR_TELEGRAM_USERNAME" target="_blank" class="bg-[#24A1DE] text-white font-bold px-6 py-3.5 rounded-xl shadow-md hover:bg-[#208bbf] transition">
+                    <i class="fa-brands fa-telegram mr-2"></i> Написать в Telegram
+                </a>
+                <a href="https://wa.me/995511157979" target="_blank" class="bg-[#25D366] text-black font-bold px-6 py-3.5 rounded-xl shadow-md hover:bg-[#20ba5a] transition">
+                    <i class="fa-brands fa-whatsapp mr-2"></i> Написать в WhatsApp
+                </a>
+            </div>
+
+            <!-- ЛОКАЦИЯ (КАРТА И АДРЕС) -->
+            <div class="border-t border-white/10 pt-8 text-left max-w-xl mx-auto">
+                <h3 class="text-lg font-bold mb-2 text-center sm:text-left text-amber-400">
+                    <i class="fa-solid fa-map-location-dot mr-2"></i> Ждем вас также в гости:
+                </h3>
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
+                    <p class="text-gray-300 text-sm text-center sm:text-left">
+                        79 Gorgasali St / 45 Melikishvili St, Батуми, Грузия
+                    </p>
+                    <a href="https://maps.google.com/?cid=11954341674096152093" target="_blank" class="inline-block text-center text-xs bg-amber-500/10 hover:bg-amber-500 text-amber-400 hover:text-black border border-amber-500/30 font-bold px-4 py-2 rounded-xl transition shrink-0">
+                        <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i> Открыть в Google Maps
+                    </a>
+                </div>
+                <!-- Интерактивная карта ONE Lari -->
+                <div class="w-full h-56 rounded-xl overflow-hidden shadow-inner border border-white/5">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2979.167232371904!2d41.6331902!3d41.6413204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406786159676e693%3A0x64e43f55099f6645!2sONE%20Lari!5e0!3m2!1sru!2sge!4v1710000000000!5m2!1sru!2sge" 
+                        class="w-full h-full border-0 grayscale invert opacity-85" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ПОДВАЛ -->
+    <footer class="py-8 border-t border-white/5 text-center text-xs text-gray-500">
+        <p class="mb-2">© 2026 ONE Lari Кафе. Батуми, Грузия.</p>
+        <p>Готовим для вас ежедневно с 08:00 до 22:00</p>
+    </footer>
+
+</body>
+</html>
