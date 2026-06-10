@@ -1,138 +1,139 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ONE Lari Батуми | Доставка горячей еды и панкейков</title>
-    <!-- Подключаем Tailwind CSS -->
+    <title>ONE Lari Batumi | Food & Pancake Delivery</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- Подключаем иконки FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Montserrat', sans-serif; }
+        /* Стилизация виджета перевода под темную тему */
+        .goog-te-gadget { font-family: 'Montserrat', sans-serif !important; text-transform: uppercase; font-size: 11px !important; font-weight: 700; }
+        .goog-te-gadget-simple { background-color: rgba(255,255,255,0.05) !important; border: 1px solid rgba(255,255,255,0.1) !important; padding: 6px 10px !important; rounded: 12px !important; border-radius: 12px !important; }
+        .goog-te-gadget-simple .goog-te-menu-value span { color: #9ca3af !important; }
+        .goog-te-gadget-simple .goog-te-menu-value span:hover { color: #f59e0b !important; }
+        .goog-te-banner-frame.skiptranslate { display: none !important; }
+        body { top: 0px !important; }
     </style>
 </head>
 <body class="bg-[#121212] text-gray-100 antialiased">
 
-    <!-- НАВИГАЦИЯ (МАКСИМАЛЬНЫЙ ФОКУС НА АДРЕС) -->
     <header class="sticky top-0 z-50 backdrop-blur-md bg-[#121212]/90 border-b border-white/10 shadow-lg">
-        <div class="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between">
-            <div class="flex items-center gap-3">
+        <div class="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-2 sm:gap-3">
                 <div class="text-xl font-extrabold tracking-wider text-amber-500">ONE LARI</div>
-                <div class="hidden xs:flex items-center bg-amber-500/10 text-amber-400 border border-amber-500/20 text-[11px] font-bold px-2.5 py-1 rounded-lg">
-                    <i class="fa-solid fa-location-dot mr-1.5"></i> Батуми, ул. Горгасали, 79
+                <div class="hidden sm:flex items-center bg-amber-500/10 text-amber-400 border border-amber-500/20 text-[11px] font-bold px-2.5 py-1 rounded-lg">
+                    <i class="fa-solid fa-location-dot mr-1.5"></i> Batumi, 79 Gorgasali St
                 </div>
             </div>
-            <a href="tel:+995511157979" class="text-sm font-semibold text-gray-300 hover:text-amber-500 transition flex items-center bg-white/5 border border-white/10 px-3 py-1.5 rounded-xl">
-                <i class="fa-solid fa-phone text-amber-500 mr-2"></i> +995 511 15 79 79
-            </a>
+            
+            <div class="flex items-center gap-3">
+                <div id="google_translate_element"></div>
+                
+                <a href="tel:+995511157979" class="text-xs sm:text-sm font-semibold text-gray-300 hover:text-amber-500 transition flex items-center bg-white/5 border border-white/10 px-2.5 py-1.5 rounded-xl shrink-0">
+                    <i class="fa-solid fa-phone text-amber-500 mr-1.5"></i> +995 511 15 79 79
+                </a>
+            </div>
         </div>
     </header>
 
-    <!-- ГЛАВНЫЙ ЭКРАН (HERO) -->
     <section class="relative py-12 px-4 max-w-4xl mx-auto text-center">
         <div class="absolute inset-0 bg-gradient-to-b from-amber-500/10 to-transparent blur-3xl -z-10 rounded-full max-w-lg mx-auto"></div>
         
-        <!-- Локальный тег -->
         <span class="inline-flex items-center bg-amber-500/10 text-amber-400 text-xs px-3 py-1.5 rounded-full font-bold uppercase tracking-wide mb-6 border border-amber-500/20">
-            <i class="fa-solid fa-bolt mr-1.5 animate-pulse"></i> Экспресс-доставка по всему Батуми
+            <i class="fa-solid fa-bolt mr-1.5 animate-pulse"></i> Express Delivery Across Batumi
         </span>
         
         <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 leading-tight">
-            Горячая кухня из центра города <br>
+            Fresh Kitchen From The City Center <br>
             <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">
-                к вам домой за 30-45 минут
+                To Your Door In 30-45 Minutes
             </span>
         </h1>
         
         <p class="text-gray-400 text-sm md:text-base max-w-md mx-auto mb-8">
-            Находимся на пересечении Горгасали и Меликишвили. Еда просто не успеет остыть в дороге!
+            Located at the intersection of Gorgasali and Melikishvili. Your food stays piping hot!
         </p>
         
-        <!-- ЛОКАЛЬНЫЕ КНОПКИ СКОРОСТНОГО ЗАКАЗА -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-md mx-auto px-4 mb-6">
             <a href="https://wolt.com/en/geo/batumi/restaurant/one-lari" target="_blank" class="flex items-center justify-center bg-[#00c2e8] text-white font-extrabold py-3.5 rounded-xl hover:scale-[1.02] transition shadow-md group">
-                <i class="fa-solid fa-bicycle mr-2 group-hover:animate-bounce"></i> Заказать через Wolt
+                <i class="fa-solid fa-bicycle mr-2 group-hover:animate-bounce"></i> Order on Wolt
             </a>
             <a href="https://glovoapp.com/en/ge/batumi/stores/one-lari-bat" target="_blank" class="flex items-center justify-center bg-[#ffc244] text-black font-extrabold py-3.5 rounded-xl hover:scale-[1.02] transition shadow-md group">
-                <i class="fa-solid fa-motorcycle mr-2 group-hover:animate-bounce"></i> Заказать через Glovo
+                <i class="fa-solid fa-motorcycle mr-2 group-hover:animate-bounce"></i> Order on Glovo
             </a>
         </div>
         
         <div class="flex justify-center px-4">
             <a href="#menu" class="text-sm font-semibold text-amber-400 hover:text-amber-300 underline underline-offset-4 decoration-amber-500/50">
-                <i class="fa-solid fa-utensils mr-1"></i> Посмотреть меню и заказать напрямую дешевле
+                <i class="fa-solid fa-utensils mr-1"></i> View Menu & Order Directly Cheaper
             </a>
         </div>
     </section>
 
-    <!-- ЗОНЫ И СКОРОСТЬ ДОСТАВКИ -->
     <section class="py-6 px-4 max-w-4xl mx-auto">
         <div class="bg-white/5 border border-white/5 rounded-2xl p-4 grid grid-cols-1 md:grid-cols-3 gap-4 text-center items-center">
             <div class="flex items-center justify-center gap-3 md:border-r border-white/10 py-2">
                 <i class="fa-solid fa-location-crosshairs text-2xl text-amber-500"></i>
                 <div class="text-left">
-                    <h4 class="text-xs font-bold uppercase text-gray-400">Рядом с вами</h4>
-                    <p class="text-sm font-bold text-white">Старый Батуми и центр</p>
+                    <h4 class="text-xs font-bold uppercase text-gray-400">Near You</h4>
+                    <p class="text-sm font-bold text-white">Old Batumi & Center</p>
                 </div>
             </div>
             <div class="flex items-center justify-center gap-3 md:border-r border-white/10 py-2">
                 <i class="fa-solid fa-truck-fast text-2xl text-amber-500"></i>
                 <div class="text-left">
-                    <h4 class="text-xs font-bold uppercase text-gray-400">Среднее время</h4>
-                    <p class="text-sm font-bold text-white">Доставка за 35 минут</p>
+                    <h4 class="text-xs font-bold uppercase text-gray-400">Average Time</h4>
+                    <p class="text-sm font-bold text-white">Delivery in 35 mins</p>
                 </div>
             </div>
             <div class="flex items-center justify-center gap-3 py-2">
                 <i class="fa-solid fa-bag-shopping text-2xl text-amber-500"></i>
                 <div class="text-left">
-                    <h4 class="text-xs font-bold uppercase text-gray-400">Самовывоз</h4>
-                    <p class="text-sm font-bold text-white">Скидка -10% (заберу сам)</p>
+                    <h4 class="text-xs font-bold uppercase text-gray-400">Takeaway</h4>
+                    <p class="text-sm font-bold text-white">-10% Off (Pickup)</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- МЕНЮ -->
     <section id="menu" class="py-12 px-4 max-w-4xl mx-auto">
-        <h2 class="text-2xl font-extrabold mb-8 border-l-4 border-amber-500 pl-3">Популярно в ONE Lari</h2>
+        <h2 class="text-2xl font-extrabold mb-8 border-l-4 border-amber-500 pl-3">Popular at ONE Lari</h2>
         
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
             
-            <!-- Блюдо 1 -->
             <div class="bg-white/5 rounded-2xl overflow-hidden border border-white/5 flex flex-col justify-between group hover:border-amber-500/30 transition duration-300">
                 <div class="relative h-48 bg-gray-800">
-                    <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=500&auto=format&fit=crop&q=60" alt="Панкейки Курица-Сыр" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=500&auto=format&fit=crop&q=60" alt="Chicken & Cheese Pancakes" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     <span class="absolute top-3 right-3 bg-black/70 backdrop-blur-md text-amber-400 font-bold px-3 py-1 rounded-lg text-sm">
                         18 ₾
                     </span>
                 </div>
                 <div class="p-5">
-                    <h3 class="text-lg font-bold mb-2">Панкейки Курица-Сыр</h3>
-                    <p class="text-gray-400 text-xs mb-4">4 нежных воздушных панкейка, сочное куриное филе, много тянущегося сыра. Идеальный сытный баланс!</p>
-                    <a href="https://t.me/YOUR_TELEGRAM_USERNAME?text=Хочу_заказать_Панкейки_Курица_Сыр" target="_blank" class="w-full inline-block text-center bg-white/5 hover:bg-amber-500 hover:text-black font-bold py-2.5 rounded-xl text-sm transition">
-                        Заказать в Telegram напрямую
+                    <h3 class="text-lg font-bold mb-2">Chicken & Cheese Pancakes</h3>
+                    <p class="text-gray-400 text-xs mb-4">4 fluffy, tender pancakes packed with juicy chicken breast and melted mozzarella. Perfect savory balance!</p>
+                    <a href="https://t.me/YOUR_TELEGRAM_USERNAME?text=I_want_to_order_Chicken_Cheese_Pancakes" target="_blank" class="w-full inline-block text-center bg-white/5 hover:bg-amber-500 hover:text-black font-bold py-2.5 rounded-xl text-sm transition">
+                        Order via Telegram
                     </a>
                 </div>
             </div>
 
-            <!-- Блюдо 2 -->
             <div class="bg-white/5 rounded-2xl overflow-hidden border border-white/5 flex flex-col justify-between group hover:border-amber-500/30 transition duration-300">
                 <div class="relative h-48 bg-gray-800">
-                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500&auto=format&fit=crop&q=60" alt="Комбо" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500&auto=format&fit=crop&q=60" alt="Dozen Combo" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     <span class="absolute top-3 right-3 bg-black/70 backdrop-blur-md text-amber-400 font-bold px-3 py-1 rounded-lg text-sm">
                         25 ₾
                     </span>
                 </div>
                 <div class="p-5">
-                    <h3 class="text-lg font-bold mb-2">Комбо-Завтрак "Дюжина"</h3>
-                    <p class="text-gray-400 text-xs mb-4">Большой сет: 12 фирменных сладких панкейков, нежнейший крем ONE Lari, шоколад и хрустящие орехи.</p>
-                    <a href="https://t.me/YOUR_TELEGRAM_USERNAME?text=Хочу_заказать_Комбо_Дюжина" target="_blank" class="w-full inline-block text-center bg-white/5 hover:bg-amber-500 hover:text-black font-bold py-2.5 rounded-xl text-sm transition">
-                        Заказать в Telegram напрямую
+                    <h3 class="text-lg font-bold mb-2">"Dozen" Sweet Combo</h3>
+                    <p class="text-gray-400 text-xs mb-4">A massive set of 12 signature mini-pancakes topped with ONE Lari special cream, premium chocolate, and nuts.</p>
+                    <a href="https://t.me/YOUR_TELEGRAM_USERNAME?text=I_want_to_order_Dozen_Combo" target="_blank" class="w-full inline-block text-center bg-white/5 hover:bg-amber-500 hover:text-black font-bold py-2.5 rounded-xl text-sm transition">
+                        Order via Telegram
                     </a>
                 </div>
             </div>
@@ -140,39 +141,36 @@
         </div>
     </section>
 
-    <!-- ОФОРМЛЕНИЕ ЗАКАЗА НАПРЯМУЮ -->
     <section class="py-12 px-4 max-w-4xl mx-auto">
         <div class="bg-gradient-to-r from-amber-500/10 to-orange-500/10 rounded-3xl p-6 md:p-10 border border-amber-500/20 text-center">
-            <h2 class="text-2xl font-extrabold mb-2">Прямой заказ без переплат</h2>
+            <h2 class="text-2xl font-extrabold mb-2">Direct Order (No Commission)</h2>
             <p class="text-gray-400 text-sm max-w-md mx-auto mb-6">
-                Напишите нам в чат — администратор моментально примет заказ, рассчитает время доставки до вашей улицы и отправит локального курьера.
+                Chat with us directly — our manager will quickly process your delivery address and send a local courier immediately.
             </p>
             <div class="flex flex-col sm:flex-row gap-3 justify-center mb-8">
                 <a href="https://t.me/YOUR_TELEGRAM_USERNAME" target="_blank" class="bg-[#24A1DE] text-white font-bold px-6 py-3.5 rounded-xl shadow-md hover:bg-[#208bbf] transition">
-                    <i class="fa-brands fa-telegram mr-2"></i> Написать в Telegram
+                    <i class="fa-brands fa-telegram mr-2"></i> Message Telegram
                 </a>
                 <a href="https://wa.me/995511157979" target="_blank" class="bg-[#25D366] text-black font-bold px-6 py-3.5 rounded-xl shadow-md hover:bg-[#20ba5a] transition">
-                    <i class="fa-brands fa-whatsapp mr-2"></i> Написать в WhatsApp
+                    <i class="fa-brands fa-whatsapp mr-2"></i> Message WhatsApp
                 </a>
             </div>
 
-            <!-- ЛОКАЦИЯ (КАРТА И АДРЕС) -->
             <div class="border-t border-white/10 pt-8 text-left max-w-xl mx-auto">
                 <h3 class="text-lg font-bold mb-2 text-center sm:text-left text-amber-400">
-                    <i class="fa-solid fa-map-location-dot mr-2"></i> Ждем вас также в гости:
+                    <i class="fa-solid fa-map-location-dot mr-2"></i> Visit Us In Person:
                 </h3>
                 <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
                     <p class="text-gray-300 text-sm text-center sm:text-left">
-                        79 Gorgasali St / 45 Melikishvili St, Батуми, Грузия
+                        79 Gorgasali St / 45 Melikishvili St, Batumi, Georgia
                     </p>
                     <a href="https://maps.google.com/?cid=11954341674096152093" target="_blank" class="inline-block text-center text-xs bg-amber-500/10 hover:bg-amber-500 text-amber-400 hover:text-black border border-amber-500/30 font-bold px-4 py-2 rounded-xl transition shrink-0">
-                        <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i> Открыть в Google Maps
+                        <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i> Open Google Maps
                     </a>
                 </div>
-                <!-- Интерактивная карта ONE Lari -->
                 <div class="w-full h-56 rounded-xl overflow-hidden shadow-inner border border-white/5">
                     <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2979.167232371904!2d41.6331902!3d41.6413204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406786159676e693%3A0x64e43f55099f6645!2sONE%20Lari!5e0!3m2!1sru!2sge!4v1710000000000!5m2!1sru!2sge" 
+                        src="https://www.google.com/maps/embed?pb=!11m18!1m12!1m3!1d2979.167232371904!2d41.6331902!3d41.6413204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40678615967bd34b%3A0xa5e5f3964db6e5bd!2sONE%20Lari%20Pancakes%20%26%20Coffee!5e0!3m2!1sen!2sge!4v1711000000000!5m2!1sen!2sge" 
                         class="w-full h-full border-0 grayscale invert opacity-85" 
                         allowfullscreen="" 
                         loading="lazy" 
@@ -183,11 +181,21 @@
         </div>
     </section>
 
-    <!-- ПОДВАЛ -->
     <footer class="py-8 border-t border-white/5 text-center text-xs text-gray-500">
-        <p class="mb-2">© 2026 ONE Lari Кафе. Батуми, Грузия.</p>
-        <p>Готовим для вас ежедневно с 08:00 до 22:00</p>
+        <p class="mb-2">© 2026 ONE Lari Cafe. Batumi, Georgia.</p>
+        <p>Open everyday from 08:00 AM to 10:00 PM</p>
     </footer>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
