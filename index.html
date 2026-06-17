@@ -1,361 +1,268 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ONE Lari | Premium Pancakes & Specialty Coffee Batumi</title>
-    <meta name="description" content="A massive set of 12 signature pancakes topped with ONE Lari special cream, premium chocolate, and nuts. Order via Glovo.">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>ONE Lari</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-dark: #0a0a0a;
-            --bg-card: rgba(25, 25, 25, 0.85);
-            --accent: #e5a93c;
-            --accent-hover: #f1be5c;
-            --text-main: #ffffff;
-            --text-muted: #a0a0a0;
-            --glow: rgba(229, 169, 60, 0.15);
+            --bg-color: #0d0d0d;
+            --card-bg: #141414;
+            --accent-color: #e5a93c;
+            --text-color: #ffffff;
+            --text-muted: #888888;
         }
 
-        *, *::before, *::after {
+        * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            font-family: 'Montserrat', sans-serif;
         }
 
         body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-            background-image: radial-gradient(circle at 50% 0%, #1a1510 0%, #0a0a0a 70%);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            padding: 20px;
         }
 
         header {
-            background: rgba(10, 10, 10, 0.8);
-            backdrop-filter: blur(10px);
-            padding: 20px 40px;
+            max-width: 1200px;
+            margin: 0 auto 40px auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            padding: 10px 0;
         }
 
-        .logo-container {
+        .logo {
+            font-weight: 700;
+            font-size: 24px;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .languages {
             display: flex;
-            align-items: center;
             gap: 15px;
         }
 
-        .logo-img {
-            height: 55px;
-            width: auto;
-            filter: drop-shadow(0 0 8px rgba(225,169,60,0.3));
-        }
-
-        .brand-name {
-            font-size: 26px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .brand-name span {
-            color: var(--accent);
-        }
-
-        .lang-switch {
-            display: flex;
-            gap: 8px;
-            background: rgba(255,255,255,0.03);
-            padding: 4px;
-            border-radius: 30px;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .lang-btn {
-            background: transparent;
+        .lang {
             color: var(--text-muted);
-            border: none;
-            padding: 8px 18px;
-            cursor: pointer;
-            border-radius: 20px;
+            text-decoration: none;
+            font-size: 12px;
             font-weight: 600;
-            font-size: 13px;
-            transition: all 0.3s ease;
         }
 
-        .lang-btn.active, .lang-btn:hover {
-            background-color: var(--accent);
-            color: #000000;
-            box-shadow: 0 4px 12px rgba(229, 169, 60, 0.3);
+        .lang.active {
+            color: var(--text-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 2px;
         }
 
-        .lang-section {
-            display: none;
-            max-width: 1300px;
+        main {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 60px 40px;
         }
 
-        .lang-section.active {
-            display: block;
-            animation: fadeIn 0.5s ease-in-out;
+        .section-header {
+            margin-bottom: 30px;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .section-title {
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 20px;
+        .section-header h2 {
+            font-size: 20px;
             text-transform: uppercase;
             letter-spacing: 2px;
+            margin-bottom: 15px;
             position: relative;
             display: inline-block;
         }
 
-        .section-title::after {
+        .section-header h2::after {
             content: '';
             position: absolute;
             left: 0;
-            bottom: -8px;
-            width: 60px;
-            height: 3px;
-            background: var(--accent);
-            box-shadow: 0 0 8px var(--accent);
+            bottom: -5px;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent-color);
         }
 
-        .section-subtitle {
+        .section-desc {
             color: var(--text-muted);
-            font-size: 16px;
-            margin-bottom: 40px;
-            font-weight: 300;
-            max-width: 700px;
+            font-size: 14px;
+            max-width: 600px;
+            line-height: 1.6;
+            margin-bottom: 30px;
         }
 
-        /* Products Grid */
-        .products-grid {
+        /* Grid для карточек */
+        .grid-popular {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 40px;
-            margin-bottom: 80px;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
         }
 
-        .product-card {
-            background: var(--bg-card);
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            border-radius: 24px;
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
             display: flex;
             flex-direction: column;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
-        .product-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(229, 169, 60, 0.3);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.8), 0 0 20px var(--glow);
-        }
-
-        .image-wrapper {
+        .card-image {
             position: relative;
             width: 100%;
-            height: 320px;
-            overflow: hidden;
-            background: #151515;
+            height: 240px;
+            background-color: #222;
         }
 
-        .product-img {
+        .card-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.6s ease;
         }
 
-        .product-card:hover .product-img {
-            transform: scale(1.06);
-        }
-
-        .badge-container {
+        .badge-delivery {
             position: absolute;
-            top: 20px;
-            left: 20px;
-            right: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 10;
-        }
-
-        .hit-badge {
-            background: #e63946;
+            top: 15px;
+            left: 15px;
+            background-color: #ff4a4a;
             color: white;
-            padding: 6px 14px;
-            border-radius: 30px;
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 700;
+            padding: 4px 8px;
+            border-radius: 4px;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 10px rgba(230, 57, 70, 0.4);
         }
 
-        .price-badge {
-            background: rgba(10, 10, 10, 0.85);
-            color: var(--accent);
-            border: 1px solid var(--accent);
-            padding: 6px 16px;
-            border-radius: 30px;
+        .badge-price {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: rgba(0,0,0,0.7);
+            color: var(--accent-color);
+            font-size: 12px;
             font-weight: 700;
-            font-size: 16px;
-            backdrop-filter: blur(5px);
+            padding: 4px 10px;
+            border-radius: 12px;
+            border: 1px solid var(--accent-color);
         }
 
-        .product-info {
-            padding: 35px;
+        .card-content {
+            padding: 25px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
         }
 
-        .product-title {
-            font-size: 24px;
+        .card-title {
+            font-size: 16px;
             font-weight: 600;
-            margin-bottom: 20px;
-            letter-spacing: 0.5px;
+            margin-bottom: 15px;
         }
 
-        .product-desc {
-            color: var(--text-muted);
-            font-size: 15px;
-            margin-bottom: 30px;
+        .card-list {
             list-style: none;
+            margin-bottom: 25px;
             flex-grow: 1;
         }
 
-        .product-desc li {
-            margin-bottom: 12px;
-            position: relative;
-            padding-left: 22px;
+        .card-list li {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
         }
 
-        .product-desc li::before {
-            content: "✓";
-            color: var(--accent);
-            position: absolute;
-            left: 0;
-            font-weight: 700;
+        .card-list li::before {
+            content: '✓';
+            color: var(--accent-color);
+            margin-right: 10px;
+            font-weight: bold;
         }
 
-        .order-btn {
-            background: var(--accent);
-            color: #0a0a0a;
+        .btn-order {
+            display: block;
+            background-color: var(--accent-color);
+            color: #000;
             text-align: center;
-            padding: 16px;
-            border-radius: 14px;
+            padding: 12px;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 16px;
-            letter-spacing: 0.5px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(229, 169, 60, 0.2);
+            font-size: 14px;
+            transition: background 0.2s;
         }
 
-        .order-btn:hover {
-            background: var(--accent-hover);
-            box-shadow: 0 6px 20px rgba(229, 169, 60, 0.4);
+        .btn-order:hover {
+            background-color: #f1be5c;
         }
 
-        /* Coffee Menu Style */
-        .coffee-container {
-            background: var(--bg-card);
-            border: 1px solid rgba(255, 255, 255, 0.02);
-            border-radius: 24px;
-            padding: 45px;
-            margin-bottom: 80px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        /* Блок Кофе */
+        .coffee-block {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 60px;
         }
 
         .coffee-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 30px 60px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px 40px;
         }
 
         .coffee-item {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
-            position: relative;
-        }
-
-        .coffee-details {
-            flex-grow: 1;
-            padding-right: 15px;
-        }
-
-        .coffee-name-row {
-            display: flex;
-            align-items: flex-end;
+            align-items: baseline;
+            margin-bottom: 15px;
         }
 
         .coffee-name {
-            font-size: 18px;
+            font-size: 14px;
             font-weight: 600;
-            letter-spacing: 0.5px;
-            background: #181818;
-            padding-right: 10px;
-            position: relative;
-            z-index: 2;
         }
 
-        .coffee-leader {
-            flex-grow: 1;
-            border-bottom: 1px dashed rgba(255,255,255,0.15);
-            margin-bottom: 5px;
-            position: relative;
-            top: -2px;
-        }
-
-        .coffee-desc {
-            font-size: 13px;
+        .coffee-volume {
             color: var(--text-muted);
-            margin-top: 6px;
+            font-size: 12px;
+            font-weight: 400;
+        }
+
+        .coffee-dots {
+            flex-grow: 1;
+            border-bottom: 1px dashed #333;
+            margin: 0 10px;
         }
 
         .coffee-price {
-            font-size: 18px;
+            font-size: 14px;
             font-weight: 700;
-            color: var(--accent);
-            padding-left: 10px;
-            background: #181818;
-            position: relative;
-            z-index: 2;
+            color: var(--accent-color);
         }
 
-        /* Info Blocks */
-        .info-grid {
+        /* Блок инфо */
+        .grid-info {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
-            margin-top: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
         }
 
         .info-card {
-            background: var(--bg-card);
-            border: 1px solid rgba(255, 255, 255, 0.02);
-            border-radius: 24px;
-            padding: 40px;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 30px;
             text-align: center;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -363,132 +270,159 @@
         }
 
         .info-icon {
-            font-size: 44px;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 0 10px var(--glow));
+            width: 24px;
+            height: 24px;
+            margin-bottom: 15px;
         }
 
-        .info-headline {
-            font-size: 22px;
-            font-weight: 600;
-            color: var(--accent);
-            margin-bottom: 15px;
+        .info-title {
+            font-size: 12px;
+            color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 1px;
+            margin-bottom: 10px;
         }
 
-        .info-detail {
-            font-size: 16px;
-            color: var(--text-main);
-            margin-bottom: 25px;
-            font-weight: 300;
-        }
-
-        .map-btn {
-            display: inline-block;
-            background: transparent;
-            color: var(--text-main);
-            padding: 12px 28px;
-            border-radius: 30px;
-            text-decoration: none;
+        .info-value {
+            font-size: 15px;
             font-weight: 600;
-            font-size: 14px;
-            border: 1px solid rgba(255,255,255,0.15);
-            transition: all 0.3s ease;
+            line-height: 1.4;
         }
 
-        .map-btn:hover {
-            border-color: var(--accent);
-            background: var(--accent);
-            color: #0a0a0a;
-            box-shadow: 0 4px 15px rgba(229, 169, 60, 0.3);
+        .btn-map {
+            display: inline-block;
+            margin-top: 15px;
+            background-color: #222;
+            color: var(--text-color);
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            border: 1px solid #333;
         }
 
-        .map-container {
-            width: 100%;
-            height: 350px;
-            border-radius: 24px;
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.05);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        .btn-map:hover {
+            border-color: var(--accent-color);
         }
 
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
-            filter: grayscale(1) invert(0.9) contrast(1.2); /* Красивая темная карта под стиль сайта */
-        }
-
-        footer {
-            background: #050505;
-            text-align: center;
-            padding: 40px;
-            margin-top: 100px;
-            color: var(--text-muted);
-            font-size: 14px;
-            border-top: 1px solid rgba(255, 255, 255, 0.02);
-            letter-spacing: 0.5px;
-        }
-
-        @media (max-width: 900px) {
-            .coffee-grid { grid-template-columns: 1fr; gap: 25px; }
-            .products-grid { grid-template-columns: 1fr; }
-        }
-
-        @media (max-width: 600px) {
-            header { flex-direction: column; gap: 20px; padding: 20px; }
-            .lang-section { padding: 40px 20px; }
-            .section-title { font-size: 26px; }
-            .coffee-container { padding: 25px; }
+        @media (max-width: 768px) {
+            .grid-popular { grid-template-columns: 1fr; }
+            .coffee-grid { grid-template-columns: 1fr; }
+            .grid-info { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo-container">
-            <img src="logo.png" alt="ONE Lari Logo" class="logo-img">
-            <div class="brand-name">ONE <span>Lari</span></div>
-        </div>
-        <div class="lang-switch">
-            <button class="lang-btn active" onclick="switchLang('en')">ENG</button>
-            <button class="lang-btn" onclick="switchLang('ka')">GEO</button>
-            <button class="lang-btn" onclick="switchLang('ru')">RUS</button>
+        <div class="logo">ONE <span>LARI</span></div>
+        <div class="languages">
+            <a href="#" class="lang active">ENG</a>
+            <a href="#" class="lang">GEO</a>
+            <a href="#" class="lang">RUS</a>
         </div>
     </header>
 
-    <div id="lang-en" class="lang-section active">
-        <h2 class="section-title">Popular at ONE Lari</h2>
-        <p class="section-subtitle">Welcome to ONE Lari — a cozy hub in the heart of Batumi for true specialty coffee lovers and dessert enthusiasts. Enjoy our light, freshly made signature pancakes, artisanal ice cream, and outstanding breakfast dishes.</p>
-        
-        <div class="products-grid">
-            <div class="product-card">
-                <div class="image-wrapper">
-                    <div class="badge-container">
-                        <span class="hit-badge">🔥 Delivery Hit</span>
-                        <span class="price-badge">25 GEL</span>
+    <main>
+        <section>
+            <div class="section-header">
+                <h2>Popular at ONE Lari</h2>
+            </div>
+            <p class="section-desc">Welcome to ONE Lari — a cozy hub in the heart of Batumi for true specialty coffee lovers and dessert enthusiasts. Enjoy our light, freshly made signature pancakes, artisanal ice cream, and outstanding breakfast dishes.</p>
+            
+            <div class="grid-popular">
+                <div class="card">
+                    <div class="card-image">
+                        <span class="badge-delivery">Delivery Hit</span>
+                        <span class="badge-price">25 GEL</span>
+                        <img src="dozen-choco.png" alt="Pancakes Dozen Choco">
                     </div>
-                    <img src="dozen-choco.png" alt="Pancakes Dozen Choco" class="product-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Pancakes "Dozen" Choco / Cream OL</h3>
+                        <ul class="card-list">
+                            <li>12x Signature pancakes (12x80g)</li>
+                            <li>Cream "ONE Lari" (80g)</li>
+                            <li>Chocolate (50g)</li>
+                            <li>Nuts (10g)</li>
+                        </ul>
+                        <a href="https://glovoapp.com/ge/en/batumi/one-lari-bat/" class="btn-order" target="_blank">Order via Glovo</a>
+                    </div>
                 </div>
-                <div class="product-info">
-                    <h3 class="product-title">Pancakes "Dozen" Choco / Cream OL</h3>
-                    <ul class="product-desc">
-                        <li>12x Signature pancakes (12x80g)</li>
-                        <li>Cream "ONE Lari" (80g)</li>
-                        <li>Premium Chocolate (50g)</li>
-                        <li>Crushed Nuts (10g)</li>
-                    </ul>
-                    <a href="https://glovoapp.com/ge/en/batumi/one-lari-bat/" class="order-btn" target="_blank">Order via Glovo</a>
+
+                <div class="card">
+                    <div class="card-image">
+                        <span class="badge-delivery">Delivery Hit</span>
+                        <span class="badge-price">30 GEL</span>
+                        <img src="chicken-cheese-combo.jpg" alt="Combo Chicken-Cheese">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Combo Chicken-Cheese / Fresh Orange</h3>
+                        <ul class="card-list">
+                            <li>4x Pancake Chicken-Cheese</li>
+                            <li>2x Fresh orange (200ml)</li>
+                            <li>Excellent balance of macronutrients for a perfect snack!</li>
+                        </ul>
+                        <a href="https://glovoapp.com/ge/en/batumi/one-lari-bat/" class="btn-order" target="_blank">Order via Glovo</a>
+                    </div>
                 </div>
             </div>
-            <div class="product-card">
-                <div class="image-wrapper">
-                    <div class="badge-container">
-                        <span class="hit-badge">🔥 Delivery Hit</span>
-                        <span class="price-badge">30 GEL</span>
+        </section>
+
+        <section>
+            <div class="section-header">
+                <h2>Specialty Coffee Menu</h2>
+            </div>
+            <div class="coffee-block">
+                <div class="coffee-grid">
+                    <div class="coffee-item">
+                        <span class="coffee-name">Espresso <span class="coffee-volume">(30ml)</span></span>
+                        <div class="coffee-dots"></div>
+                        <span class="coffee-price">3 GEL</span>
                     </div>
-                    <img src="chicken-cheese-combo.jpg" alt="Combo Chicken Cheese" class="product-img">
+                    <div class="coffee-item">
+                        <span class="coffee-name">Americano <span class="coffee-volume">(100ml)</span></span>
+                        <div class="coffee-dots"></div>
+                        <span class="coffee-price">3 GEL</span>
+                    </div>
+                    <div class="coffee-item">
+                        <span class="coffee-name">Cappuccino <span class="coffee-volume">(250ml)</span></span>
+                        <div class="coffee-dots"></div>
+                        <span class="coffee-price">4 GEL</span>
+                    </div>
+                    <div class="coffee-item">
+                        <span class="coffee-name">Latte <span class="coffee-volume">(250ml)</span></span>
+                        <div class="coffee-dots"></div>
+                        <span class="coffee-price">5 GEL</span>
+                    </div>
+                    <div class="coffee-item">
+                        <span class="coffee-name">Flat White <span class="coffee-volume">(250ml)</span></span>
+                        <div class="coffee-dots"></div>
+                        <span class="coffee-price">5 GEL</span>
+                    </div>
                 </div>
-                <div class="product-info">
-                    <h3 class="product-title">Combo Chicken-Cheese & Fresh Orange</h3>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-header">
+                <h2>Our Location & Hours</h2>
+            </div>
+            <div class="grid-info">
+                <div class="info-card">
+                    <div class="info-icon">📍</div>
+                    <div class="info-title">Our Address</div>
+                    <div class="info-value">Vakhtang Gorgasali St, 79<br>Batumi, Georgia</div>
+                    <a href="https://maps.google.com/?q=ONE+Lari+Batumi+Vakhtang+Gorgasali+St+79" class="btn-map" target="_blank">🗺️ Open Map</a>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">🕒</div>
+                    <div class="info-title">We are Open</div>
+                    <div class="info-value">Every Day<br>08:00 – 21:00</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
