@@ -19,11 +19,54 @@
             margin: 0 auto;
             padding: 20px;
         }
-        .lang-section {
+        /* Шапка с переключателем языков */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
             border-bottom: 1px solid #262626;
-            padding-bottom: 40px;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: 1px;
+        }
+        .logo span {
+            color: #ff9900;
+        }
+        .lang-switcher {
+            display: flex;
+            gap: 10px;
+        }
+        .lang-btn {
+            background: #1a1a1a;
+            color: #ffffff;
+            border: 1px solid #333333;
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: 700;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .lang-btn.active {
+            background: #ff9900;
+            color: #000000;
+            border-color: #ff9900;
+        }
+        
+        /* Скрытие языковых блоков */
+        .lang-section {
+            display: none;
+        }
+        .lang-section.active {
+            display: block;
+        }
+
+        /* Стили контента */
         .lang-title {
             font-size: 28px;
             font-weight: 700;
@@ -206,7 +249,16 @@
 
 <div class="container">
 
-    <div class="lang-section">
+    <header class="header">
+        <div class="logo">ONE <span>Lari</span></div>
+        <div class="lang-switcher">
+            <button class="lang-btn active" onclick="switchLang('ka')">GEO</button>
+            <button class="lang-btn" onclick="switchLang('en')">ENG</button>
+            <button class="lang-btn" onclick="switchLang('ru')">RUS</button>
+        </div>
+    </header>
+
+    <div id="lang-ka" class="lang-section active">
         <h2 class="lang-title">პოპულარული ONE Lari-ში</h2>
         <div class="grid">
             <div class="card">
@@ -275,7 +327,7 @@
     </div>
 
 
-    <div class="lang-section">
+    <div id="lang-en" class="lang-section">
         <h2 class="lang-title">Popular at ONE Lari</h2>
         <div class="grid">
             <div class="card">
@@ -344,7 +396,7 @@
     </div>
 
 
-    <div class="lang-section" style="border-bottom: none;">
+    <div id="lang-ru" class="lang-section">
         <h2 class="lang-title">Популярно в ONE Lari</h2>
         <div class="grid">
             <div class="card">
@@ -377,42 +429,3 @@
                         <h3 class="card-title">Combo Chicken-Cheese / Fresh Orange</h3>
                         <p class="card-text">
                             • 4х Pancake Chicken-Cheese<br>
-                            • 2х Fresh orange (200мл)<br>
-                            • Отличный баланс макронутриентов для идеального перекуса!
-                        </p>
-                    </div>
-                    <a href="https://glovoapp.com/en/ge/batumi/stores/one-lari-bat/" target="_blank" class="btn-order">Заказать на Glovo</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="info-box">
-            <h2 style="font-size: 24px; margin-bottom: 10px; text-transform: uppercase;">Где мы находимся</h2>
-            <div class="info-grid">
-                <div class="info-card">
-                    <div style="font-size: 24px; margin-bottom: 8px;">📍</div>
-                    <div style="font-weight: 600; color: #ff9900;">Наш адрес</div>
-                    <div style="font-size: 14px; line-height: 1.4;">ул. Фарнаваз Мепе, 79 / ул. Меликишвили, 45<br><span style="color: #8c8c8c;">Батуми, Грузия</span></div>
-                </div>
-                <div class="info-card">
-                    <div style="font-size: 24px; margin-bottom: 8px;">🕒</div>
-                    <div style="font-weight: 600; color: #ff9900;">Мы открыты</div>
-                    <div style="font-size: 14px; line-height: 1.4;">Каждый день<br><span style="font-weight: bold; font-size: 16px; color: #ffffff;">08:00 – 21:00</span></div>
-                </div>
-            </div>
-            <a href="https://maps.app.goo.gl/ChIJ9UUMB6yHZ0ARHU4mcGpa5qU" target="_blank" class="btn-map">🗺️ Открыть на картах / Навигатор</a>
-        </div>
-
-        <div class="contacts-box">
-            <h3 style="font-size: 18px; margin-bottom: 20px; text-transform: uppercase;">Связаться с нами</h3>
-            <div class="contact-buttons">
-                <a href="tel:+995511157979" class="btn-phone">📞 +995 511 15 79 79</a>
-                <a href="https://t.me/+tmnRjcS_K_I2MGU6" target="_blank" class="btn-tg">✈️ Написать в Telegram</a>
-            </div>
-        </div>
-    </div>
-
-</div>
-
-</body>
-</html>
