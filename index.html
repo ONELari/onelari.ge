@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ONE Lari Batumi | Premium Pancakes & Specialty Coffee</title>
+    <title>ONE Lari | Premium Pancakes & Specialty Coffee Batumi</title>
     <meta name="description" content="A massive set of 12 signature pancakes topped with ONE Lari special cream, premium chocolate, and nuts. Order via Glovo.">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -115,7 +115,7 @@
         .section-title {
             font-size: 32px;
             font-weight: 700;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 2px;
             position: relative;
@@ -131,6 +131,14 @@
             height: 3px;
             background: var(--accent);
             box-shadow: 0 0 8px var(--accent);
+        }
+
+        .section-subtitle {
+            color: var(--text-muted);
+            font-size: 16px;
+            margin-bottom: 40px;
+            font-weight: 300;
+            max-width: 700px;
         }
 
         /* Products Grid */
@@ -161,8 +169,9 @@
         .image-wrapper {
             position: relative;
             width: 100%;
-            height: 300px;
+            height: 320px;
             overflow: hidden;
+            background: #151515;
         }
 
         .product-img {
@@ -295,14 +304,14 @@
 
         .coffee-name-row {
             display: flex;
-            align-items: flex-bottom;
+            align-items: flex-end;
         }
 
         .coffee-name {
             font-size: 18px;
             font-weight: 600;
             letter-spacing: 0.5px;
-            background: var(--bg-dark);
+            background: #181818;
             padding-right: 10px;
             position: relative;
             z-index: 2;
@@ -327,7 +336,7 @@
             font-weight: 700;
             color: var(--accent);
             padding-left: 10px;
-            background: var(--bg-dark);
+            background: #181818;
             position: relative;
             z-index: 2;
         }
@@ -395,6 +404,22 @@
             box-shadow: 0 4px 15px rgba(229, 169, 60, 0.3);
         }
 
+        .map-container {
+            width: 100%;
+            height: 350px;
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            filter: grayscale(1) invert(0.9) contrast(1.2); /* Красивая темная карта под стиль сайта */
+        }
+
         footer {
             background: #050505;
             text-align: center;
@@ -434,7 +459,9 @@
     </header>
 
     <div id="lang-en" class="lang-section active">
-        <div class="section-title">Popular at ONE Lari</div>
+        <h2 class="section-title">Popular at ONE Lari</h2>
+        <p class="section-subtitle">Welcome to ONE Lari — a cozy hub in the heart of Batumi for true specialty coffee lovers and dessert enthusiasts. Enjoy our light, freshly made signature pancakes, artisanal ice cream, and outstanding breakfast dishes.</p>
+        
         <div class="products-grid">
             <div class="product-card">
                 <div class="image-wrapper">
@@ -445,12 +472,12 @@
                     <img src="dozen-choco.png" alt="Pancakes Dozen Choco" class="product-img">
                 </div>
                 <div class="product-info">
-                    <div class="product-title">Pancakes "Dozen" Choco / Cream OL</div>
+                    <h3 class="product-title">Pancakes "Dozen" Choco / Cream OL</h3>
                     <ul class="product-desc">
                         <li>12x Signature pancakes (12x80g)</li>
                         <li>Cream "ONE Lari" (80g)</li>
-                        <li>Chocolate (50g)</li>
-                        <li>Nuts (10g)</li>
+                        <li>Premium Chocolate (50g)</li>
+                        <li>Crushed Nuts (10g)</li>
                     </ul>
                     <a href="https://glovoapp.com/ge/en/batumi/one-lari-bat/" class="order-btn" target="_blank">Order via Glovo</a>
                 </div>
@@ -464,120 +491,4 @@
                     <img src="chicken-cheese-combo.jpg" alt="Combo Chicken Cheese" class="product-img">
                 </div>
                 <div class="product-info">
-                    <div class="product-title">Combo Chicken-Cheese / Fresh Orange</div>
-                    <ul class="product-desc">
-                        <li>4x Pancakes Chicken-Cheese</li>
-                        <li>2x Fresh orange juice (200ml)</li>
-                        <li>Excellent balance of macronutrients for a perfect snack!</li>
-                    </ul>
-                    <a href="https://glovoapp.com/ge/en/batumi/one-lari-bat/" class="order-btn" target="_blank">Order via Glovo</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="section-title">Specialty Coffee Menu</div>
-        <div class="coffee-container">
-            <div class="coffee-grid">
-                <div class="coffee-item">
-                    <div class="coffee-details">
-                        <div class="coffee-name-row"><span class="coffee-name">Espresso (30ml)</span><div class="coffee-leader"></div></div>
-                        <div class="coffee-desc">Rich and bold classic single shot</div>
-                    </div>
-                    <div class="coffee-price">3 GEL</div>
-                </div>
-                <div class="coffee-item">
-                    <div class="coffee-details">
-                        <div class="coffee-name-row"><span class="coffee-name">Americano (100ml)</span><div class="coffee-leader"></div></div>
-                        <div class="coffee-desc">Smooth espresso lengthened with hot water</div>
-                    </div>
-                    <div class="coffee-price">3 GEL</div>
-                </div>
-                <div class="coffee-item">
-                    <div class="coffee-details">
-                        <div class="coffee-name-row"><span class="coffee-name">Cappuccino (250ml)</span><div class="coffee-leader"></div></div>
-                        <div class="coffee-desc">Perfect balance of espresso, steamed milk, and velvety foam</div>
-                    </div>
-                    <div class="coffee-price">4 GEL</div>
-                </div>
-                <div class="coffee-item">
-                    <div class="coffee-details">
-                        <div class="coffee-name-row"><span class="coffee-name">Latte (250ml)</span><div class="coffee-leader"></div></div>
-                        <div class="coffee-desc">Creamy espresso with silky steamed milk</div>
-                    </div>
-                    <div class="coffee-price">5 GEL</div>
-                </div>
-                <div class="coffee-item">
-                    <div class="coffee-details">
-                        <div class="coffee-name-row"><span class="coffee-name">Flat White (250ml)</span><div class="coffee-leader"></div></div>
-                        <div class="coffee-desc">Double shot of espresso with velvety microfoam milk</div>
-                    </div>
-                    <div class="coffee-price">5 GEL</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="section-title">Our Location & Hours</div>
-        <div class="info-grid">
-            <div class="info-card">
-                <div class="info-icon">📍</div>
-                <div class="info-headline">Our Address</div>
-                <div class="info-detail">Vakhtang Gorgasali St, 79<br>Batumi, Georgia</div>
-                <a href="https://maps.google.com/?q=79+Vakhtang+Gorgasali+St+Batumi" class="map-btn" target="_blank">🗺️ Open Map</a>
-            </div>
-            <div class="info-card">
-                <div class="info-icon">🕒</div>
-                <div class="info-headline">We are Open</div>
-                <div class="info-detail">Every Single Day<br><strong>08:00 – 22:00</strong></div>
-            </div>
-        </div>
-    </div>
-
-    <div id="lang-ka" class="lang-section">
-        <div class="section-title">პოპულარული ONE Lari-ში</div>
-        <div class="products-grid">
-            <div class="product-card">
-                <div class="image-wrapper">
-                    <div class="badge-container">
-                        <span class="hit-badge">🔥 მიწოდების ჰიტი</span>
-                        <span class="price-badge">25 GEL</span>
-                    </div>
-                    <img src="dozen-choco.png" alt="Pancakes Dozen Choco" class="product-img">
-                </div>
-                <div class="product-info">
-                    <div class="product-title">პანკეიკები "Dozen" შოკოლადით / კრემით OL</div>
-                    <ul class="product-desc">
-                        <li>12x საფირმო პანკეიკი (12x80გრ)</li>
-                        <li>კრემი "ONE Lari" (80გრ)</li>
-                        <li>შოკოლადი (50გრ)</li>
-                        <li>თხილი (10გრ)</li>
-                    </ul>
-                    <a href="https://glovoapp.com/ge/en/batumi/one-lari-bat/" class="order-btn" target="_blank">შეუკვეთეთ Glovo-ით</a>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="image-wrapper">
-                    <div class="badge-container">
-                        <span class="hit-badge">🔥 მიწოდების ჰიტი</span>
-                        <span class="price-badge">30 GEL</span>
-                    </div>
-                    <img src="chicken-cheese-combo.jpg" alt="Combo Chicken Cheese" class="product-img">
-                </div>
-                <div class="product-info">
-                    <div class="product-title">კომბო ქათმით და ყველით / ფორთოხლის ფრეში</div>
-                    <ul class="product-desc">
-                        <li>4x პანკეიკი ქათმითა და ყველით</li>
-                        <li>2x ფორთოხლის ფრეში (200მლ)</li>
-                        <li>მაკრონუტრიენტების შესანიშნავი ბალანსი იდეალური წახემსებისთვის!</li>
-                    </ul>
-                    <a href="https://glovoapp.com/ge/en/batumi/one-lari-bat/" class="order-btn" target="_blank">შეუკვეთეთ Glovo-ით</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="section-title">ყავის მენიუ</div>
-        <div class="coffee-container">
-            <div class="coffee-grid">
-                <div class="coffee-item">
-                    <div class="coffee-details">
-                        <div class="coffee-name-row"><span class="coffee-name">ესპრესო (30მლ)</span><div class="coffee-leader"></div></div>
-                        <div class="coffee-desc">კლასიკური ძლიერი და არომატული ყავ
+                    <h3 class="product-title">Combo Chicken-Cheese & Fresh Orange</h3>
