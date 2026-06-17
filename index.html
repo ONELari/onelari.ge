@@ -58,12 +58,12 @@
             border-color: #ff9900;
         }
         
-        /* Скрытие языковых блоков */
+        /* Управление видимостью секций */
         .lang-section {
             display: none;
         }
         .lang-section.active {
-            display: block;
+            display: block !important;
         }
 
         /* Стили контента */
@@ -202,4 +202,108 @@
         }
         .contacts-box {
             background-color: #1a1a1a;
-            padding
+            padding: 30px 20px;
+            border-radius: 12px;
+            text-align: center;
+            max-width: 800px;
+            margin: 20px auto;
+            border-top: 2px solid #262626;
+        }
+        .contact-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .btn-phone {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #262626;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 15px 30px;
+            font-weight: 600;
+            font-size: 16px;
+            border-radius: 8px;
+            min-width: 240px;
+            border: 1px solid #333333;
+        }
+        .btn-tg {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #229ED9;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 15px 30px;
+            font-weight: 600;
+            font-size: 16px;
+            border-radius: 8px;
+            min-width: 240px;
+            box-shadow: 0 4px 12px rgba(34, 158, 217, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header class="header">
+        <div class="logo">ONE <span>Lari</span></div>
+        <div class="lang-switcher">
+            <button id="btn-en" class="lang-btn active" onclick="switchLang('en')">ENG</button>
+            <button id="btn-ka" class="lang-btn" onclick="switchLang('ka')">GEO</button>
+            <button id="btn-ru" class="lang-btn" onclick="switchLang('ru')">RUS</button>
+        </div>
+    </header>
+
+    <div id="lang-en" class="lang-section active">
+        <h2 class="lang-title">Popular at ONE Lari</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="badge">🔥 DELIVERY HIT</div>
+                <div class="img-container">
+                    <img src="dozen-choco.jpg" alt="Pancakes Dozen Choco">
+                    <div class="price">25 GEL</div>
+                </div>
+                <div class="card-content">
+                    <div>
+                        <h3 class="card-title">Pancakes "Dozen" Choco / Cream OL</h3>
+                        <p class="card-text">
+                            • 12х Signature pancakes (12х80g)<br>
+                            • Cream "ONE Lari" (80g)<br>
+                            • Chocolate (50g)<br>
+                            • Nuts (10g)
+                        </p>
+                    </div>
+                    <a href="https://glovoapp.com/en/ge/batumi/stores/one-lari-bat?productId=22941803779&externalProductId=83" target="_blank" class="btn-order">Order via Glovo</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="badge">🔥 DELIVERY HIT</div>
+                <div class="img-container">
+                    <img src="chicken-cheese-combo.jpg" alt="Combo Chicken-Cheese">
+                    <div class="price">30 GEL</div>
+                </div>
+                <div class="card-content">
+                    <div>
+                        <h3 class="card-title">Combo Chicken-Cheese / Fresh Orange</h3>
+                        <p class="card-text">
+                            • 4х Pancake Chicken-Cheese<br>
+                            • 2х Fresh orange (200ml)<br>
+                            • Excellent balance of macronutrients for a perfect snack!
+                        </p>
+                    </div>
+                    <a href="https://glovoapp.com/en/ge/batumi/stores/one-lari-bat?productId=33198094944&externalProductId=f6c37c20-9d19-42f8-a71d-ff158a3ea6ca" target="_blank" class="btn-order">Order via Glovo</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h2 style="font-size: 24px; margin-bottom: 10px; text-transform: uppercase;">Our Location</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <div style="font-size: 24px; margin-bottom: 8px;">📍</div>
+                    <div style="font-weight: 600; color: #ff9900;">Address</div>
+                    <div style="font-size: 14px; line-height: 1.4;">79 Parnavaz Mepe St /
