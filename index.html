@@ -3,213 +3,654 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ONE Lari | Batumi</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <title>ONE Lari Batumi | Best Breakfast, Pancakes & Coffee Delivery</title>
+    
+    <meta name="description" content="Looking for the best breakfast in Batumi? Enjoy premium mini-pancakes with chocolate, fresh fruits, or savory chicken & cheese combos paired with specialty espresso, cappuccino, or latte. Fast delivery via Glovo or direct order!">
+    <meta name="keywords" content="coffee batumi, breakfast batumi, pancakes batumi, cafe batumi, espresso, cappuccino, latte, glovo batumi, food delivery, кафе батуми, завтрак батуми, кофе, панкейки">
+    <meta name="author" content="ONE Lari">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://onelari.ge/">
+    <meta property="og:title" content="ONE Lari Batumi | Best Breakfast, Pancakes & Coffee">
+    <meta property="og:description" content="Delicious signature mini-pancakes and specialty coffee in Batumi. Order breakfast online with fast delivery!">
+    <meta property="og:image" content="logo.jpg">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://onelari.ge/">
+    <meta property="twitter:title" content="ONE Lari Batumi | Best Breakfast, Pancakes & Coffee">
+    <meta property="twitter:description" content="Delicious signature mini-pancakes and specialty coffee in Batumi. Order breakfast online with fast delivery!">
+    <meta property="twitter:image" content="logo.jpg">
+
     <style>
-        body { background-color: #121212; color: #ffffff; font-family: 'Montserrat', sans-serif; margin: 0; padding: 0; box-sizing: border-box; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        .header { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid #262626; margin-bottom: 30px; }
-        .logo-block { display: flex; align-items: center; gap: 15px; }
-        .logo-img { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; background-color: #262626; border: 2px solid #ff9900; }
-        .logo { font-size: 24px; font-weight: 800; color: #ffffff; letter-spacing: 1px; }
-        .logo span { color: #ff9900; }
-        .lang-switcher { display: flex; gap: 10px; }
-        .lang-switcher label { background: #1a1a1a; color: #ffffff; border: 1px solid #333333; padding: 8px 16px; font-size: 14px; font-weight: 700; border-radius: 6px; cursor: pointer; transition: all 0.3s ease; }
-        input[type="radio"] { display: none; }
-        .lang-section { display: none; }
-        #lang-toggle-en:checked ~ #lang-en, #lang-toggle-ka:checked ~ #lang-ka, #lang-toggle-ru:checked ~ #lang-ru { display: block; }
-        #lang-toggle-en:checked ~ .header .lang-switcher label[for="lang-toggle-en"], #lang-toggle-ka:checked ~ .header .lang-switcher label[for="lang-toggle-ka"], #lang-toggle-ru:checked ~ .header .lang-switcher label[for="lang-toggle-ru"] { background: #ff9900; color: #000000; border-color: #ff9900; }
-        .lang-title { font-size: 28px; font-weight: 700; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 1px; border-left: 4px solid #ff9900; padding-left: 15px; }
-        .grid { display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; margin-bottom: 40px; }
-        .card { background: #1a1a1a; border-radius: 12px; overflow: hidden; width: 100%; max-width: 360px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); display: flex; flex-direction: column; position: relative; }
-        .badge { position: absolute; top: 15px; left: 15px; background: #e60000; color: #ffffff; font-weight: 800; padding: 6px 12px; border-radius: 4px; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; z-index: 10; box-shadow: 0 2px 8px rgba(230,0,0,0.4); }
-        .img-container { position: relative; width: 100%; height: 250px; background: #262626; }
-        .img-container img { width: 100%; height: 100%; object-fit: cover; }
-        .price { position: absolute; top: 15px; right: 15px; background: #ff9900; color: #000000; font-weight: 700; padding: 6px 14px; border-radius: 20px; font-size: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.4); z-index: 10; }
-        .card-content { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
-        .card-title { font-size: 18px; font-weight: 700; margin-bottom: 10px; color: #ffffff; }
-        .card-text { font-size: 13px; color: #a6a6a6; line-height: 1.5; margin-bottom: 20px; }
-        .btn-order { background: #ff9900; color: #000000; text-align: center; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 14px; transition: all 0.3s; display: block; box-shadow: 0 4px 12px rgba(255, 153, 0, 0.2); }
-        .info-box { background-color: #1a1a1a; padding: 40px 20px; border-radius: 12px; text-align: center; max-width: 800px; margin: 20px auto; }
-        .info-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-bottom: 35px; }
-        .info-card { background: #262626; padding: 20px; border-radius: 8px; min-width: 250px; flex: 1; }
-        .btn-map { display: inline-flex; align-items: center; justify-content: center; background-color: #ff9900; color: #000000; text-decoration: none; padding: 15px 35px; font-weight: 700; font-size: 16px; border-radius: 50px; box-shadow: 0 4px 15px rgba(255, 153, 0, 0.3); }
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --primary-color: #ff9900;
+            --text-color: #ffffff;
+            --text-muted: #aaaaaa;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding-bottom: 40px;
+        }
+
+        header {
+            display: table;
+            width: 100%;
+            padding: 20px 5%;
+            background-color: #000000;
+            border-bottom: 1px solid #222;
+        }
+
+        .header-logo {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .header-logo img {
+            height: 50px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        .header-logo span {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--text-color);
+        }
+
+        .header-logo span span {
+            color: var(--primary-color);
+        }
+
+        .lang-switch {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: right;
+        }
+
+        .lang-btn {
+            background: #222;
+            color: #fff;
+            border: 1px solid #444;
+            padding: 8px 14px;
+            margin-left: 5px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn:hover, .lang-btn.active {
+            background: var(--primary-color);
+            color: #000;
+            border-color: var(--primary-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .hero-seo {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(180deg, #1a1a1a 0%, #121212 100%);
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .hero-seo h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        .hero-seo p {
+            color: var(--text-muted);
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 16px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            margin: 40px 0 20px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 12px;
+        }
+
+        .menu-grid {
+            display: block;
+            width: 100%;
+        }
+
+        .menu-card {
+            display: inline-block;
+            width: 48%;
+            margin-right: 2%;
+            margin-bottom: 25px;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            vertical-align: top;
+            border: 1px solid #2a2a2a;
+        }
+
+        @media (max-width: 768px) {
+            .menu-card {
+                width: 100%;
+                margin-right: 0;
+            }
+        }
+
+        .card-img-container {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            background-color: #252525;
+        }
+
+        .card-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .badge-hit {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: #ff3333;
+            color: white;
+            padding: 4px 10px;
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 4px;
+        }
+
+        .badge-price {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--primary-color);
+            color: black;
+            padding: 4px 10px;
+            font-size: 13px;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-body h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .card-body ul {
+            list-style: none;
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .card-body ul li {
+            margin-bottom: 6px;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .card-body ul li::before {
+            content: "•";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .btn-glovo {
+            display: block;
+            width: 100%;
+            background-color: var(--primary-color);
+            color: #000000;
+            text-align: center;
+            padding: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+            transition: background 0.2s ease;
+        }
+
+        .btn-glovo:hover {
+            background-color: #e68a00;
+        }
+
+        .coffee-list {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid #2a2a2a;
+        }
+
+        .coffee-item {
+            display: table;
+            width: 100%;
+            padding: 12px 0;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        .coffee-item:last-child {
+            border-bottom: none;
+        }
+
+        .coffee-name {
+            display: table-cell;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .coffee-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: normal;
+            margin-top: 2px;
+        }
+
+        .coffee-price {
+            display: table-cell;
+            text-align: right;
+            vertical-align: middle;
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 16px;
+            width: 80px;
+        }
+
+        .info-box {
+            background-color: #1a1a1a;
+            border-radius: 8px;
+            padding: 30px;
+            margin-top: 40px;
+            border: 1px solid #2a2a2a;
+            text-align: center;
+        }
+
+        .info-box h2 {
+            font-size: 22px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-grid {
+            display: block;
+            width: 100%;
+            margin-bottom: 25px;
+        }
+
+        .info-card {
+            display: inline-block;
+            width: 48%;
+            margin-right: 2%;
+            background: #222;
+            padding: 20px;
+            border-radius: 6px;
+            vertical-align: top;
+            text-align: center;
+            border: 1px solid #333;
+        }
+
+        @media (max-width: 768px) {
+            .info-card {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+
+        .btn-map {
+            display: inline-block;
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+            margin-top: 10px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-map:hover {
+            background: var(--primary-color);
+            color: #000;
+        }
+
+        .lang-section {
+            display: none;
+        }
+
+        .lang-section.active-lang {
+            display: block;
+        }
     </style>
 </head>
 <body>
 
-<div class="container">
-
-    <input type="radio" id="lang-toggle-en" name="lang-select" checked>
-    <input type="radio" id="lang-toggle-ka" name="lang-select">
-    <input type="radio" id="lang-toggle-ru" name="lang-select">
-
-    <header class="header">
-        <div class="logo-block">
-            <img src="logo.png" alt="" class="logo-img">
-            <div class="logo">ONE <span>Lari</span></div>
+    <header>
+        <div class="header-logo">
+            <img src="logo.jpg" alt="ONE Lari Logo">
+            <span>ONE<span> Lari</span></span>
         </div>
-        <div class="lang-switcher">
-            <label for="lang-toggle-en">ENG</label>
-            <label for="lang-toggle-ka">GEO</label>
-            <label for="lang-toggle-ru">RUS</label>
+        <div class="lang-switch">
+            <button class="lang-btn active" onclick="switchLang('en')">ENG</button>
+            <button class="lang-btn" onclick="switchLang('ka')">GEO</button>
+            <button class="lang-btn" onclick="switchLang('ru')">RUS</button>
         </div>
     </header>
 
-    <div id="lang-en" class="lang-section">
-        <h2 class="lang-title">Popular at ONE Lari</h2>
-        <div class="grid">
-            <div class="card">
-                <div class="badge">🔥 DELIVERY HIT</div>
-                <div class="img-container">
-                    <img src="dozen-choco.png" alt="Pancakes Dozen">
-                    <div class="price">25 GEL</div>
-                </div>
-                <div class="card-content">
-                    <div>
-                        <h3 class="card-title">Pancakes "Dozen" Choco / Cream OL</h3>
-                        <p class="card-text">• 12х Signature pancakes (12х80g)<br>• Cream "ONE Lari" (80g)<br>• Chocolate (50g)<br>• Nuts (10g)</p>
+    <div class="container">
+
+        <div id="lang-en" class="lang-section active-lang">
+            <div class="hero-seo">
+                <h1>Best Breakfast, Pancakes & Coffee in Batumi</h1>
+                <p>Welcome to ONE Lari! We serve premium delicious mini-pancakes, authentic savory combos, and specialty coffee. The ultimate breakfast and snack location in Batumi. Order delivery straight to your door or visit us!</p>
+            </div>
+
+            <div class="section-title">Popular at ONE Lari</div>
+            
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <div class="card-img-container">
+                        <span class="badge-hit">Delivery Hit</span>
+                        <span class="badge-price">25 GEL</span>
+                        <img src="dozen-choco.jpg" alt="Pancakes Dozen Choco Cream OL">
                     </div>
-                    <a href="https://glovoapp.com/en/ge/batumi/stores/one-lari-bat?productId=22941803779&externalProductId=83" target="_blank" class="btn-order">Order via Glovo</a>
+                    <div class="card-body">
+                        <h3>Pancakes "Dozen" Choco / Cream OL</h3>
+                        <ul>
+                            <li>12x Signature mini-pancakes (12x80g)</li>
+                            <li>Special Homemade Cream "ONE Lari" (80g)</li>
+                            <li>Premium melted chocolate (50g)</li>
+                            <li>Crushed crispy nuts (10g)</li>
+                        </ul>
+                        <a href="https://glovoapp.com/" target="_blank" class="btn-glovo">Order via Glovo</a>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <div class="card-img-container">
+                        <span class="badge-hit">Delivery Hit</span>
+                        <span class="badge-price">30 GEL</span>
+                        <img src="chicken-cheese-combo.jpg" alt="Combo Chicken Cheese Fresh Orange">
+                    </div>
+                    <div class="card-body">
+                        <h3>Combo Chicken-Cheese / Fresh Orange</h3>
+                        <ul>
+                            <li>4x Savory Pancakes with Chicken and Cheese</li>
+                            <li>2x Freshly squeezed orange juice (200ml)</li>
+                            <li>Excellent balance of macronutrients for a perfect healthy snack!</li>
+                        </ul>
+                        <a href="https://glovoapp.com/" target="_blank" class="btn-glovo">Order via Glovo</a>
+                    </div>
                 </div>
             </div>
-            <div class="card">
-                <div class="badge">🔥 DELIVERY HIT</div>
-                <div class="img-container">
-                    <img src="chicken-cheese-combo.png" alt="Combo Chicken-Cheese">
-                    <div class="price">30 GEL</div>
+
+            <div class="section-title">Specialty Coffee Menu</div>
+            <div class="coffee-list">
+                <div class="coffee-item">
+                    <div class="coffee-name">Espresso<div class="coffee-desc">Rich and bold classic single shot</div></div>
+                    <div class="coffee-price">5 GEL</div>
                 </div>
-                <div class="card-content">
-                    <div>
-                        <h3 class="card-title">Combo Chicken-Cheese / Fresh Orange</h3>
-                        <p class="card-text">• 4х Pancake Chicken-Cheese<br>• 2х Fresh orange (200ml)<br>• Excellent balance of macronutrients for a perfect snack!</p>
+                <div class="coffee-item">
+                    <div class="coffee-name">Americano<div class="coffee-desc">Smooth espresso lengthened with hot water</div></div>
+                    <div class="coffee-price">6 GEL</div>
+                </div>
+                <div class="coffee-item">
+                    <div class="coffee-name">Cappuccino<div class="coffee-desc">Perfect balance of espresso, steamed milk, and velvety foam</div></div>
+                    <div class="coffee-price">7 GEL</div>
+                </div>
+                <div class="coffee-item">
+                    <div class="coffee-name">Latte / Iced Latte<div class="coffee-desc">Creamy espresso with silky steamed milk (available cold)</div></div>
+                    <div class="coffee-price">8 GEL</div>
+                </div>
+                <div class="coffee-item">
+                    <div class="coffee-name">Flat White<div class="coffee-desc">Double shot of espresso with velvety microfoam milk</div></div>
+                    <div class="coffee-price">8 GEL</div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h2>Our Cafe Location & Hours</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div style="font-size: 24px; margin-bottom: 8px;">📍</div>
+                        <div style="font-weight: 600; color: #ff9900;">Address</div>
+                        <div style="font-size: 14px; line-height: 1.4;">79 Vakhtang Gorgasali St / 45 Melikishvili St<br><span style="color: #8c8c8c;">Batumi, Georgia</span></div>
                     </div>
-                    <a href="https://glovoapp.com/en/ge/batumi/stores/one-lari-bat?productId=33198094944&externalProductId=f6c37c20-9d19-42f8-a71d-ff158a3ea6ca" target="_blank" class="btn-order">Order via Glovo</a>
+                    <div class="info-card">
+                        <div style="font-size: 24px; margin-bottom: 8px;">🕒</div>
+                        <div style="font-weight: 600; color: #ff9900;">Working Hours</div>
+                        <div style="font-size: 14px; line-height: 1.4;">Every day<br><span style="font-weight: bold; font-size: 16px; color: #ffffff;">08:00 – 22:00</span></div>
+                    </div>
                 </div>
+                <a href="https://maps.google.com" target="_blank" class="btn-map">🗺️ Open on Google Maps</a>
             </div>
         </div>
 
-        <div class="info-box">
-            <h2>Our Location</h2>
-            <div class="info-grid">
-                <div class="info-card">
-                    <div style="font-size: 24px; margin-bottom: 8px;">📍</div>
-                    <div style="font-weight: 600; color: #ff9900;">Address</div>
-                    <div style="font-size: 14px; line-height: 1.4;">79 Farnavaz Mepe St / 45 Melikishvili St<br><span style="color: #8c8c8c;">Batumi, Georgia</span></div>
+        <div id="lang-ka" class="lang-section">
+            <div class="hero-seo">
+                <h1>საუკეთესო საუზმე, პანკეიკები და ყავა ბათუმში</h1>
+                <p>კეთილი იყოს თქვენი მობრძანება ONE Lari-ში! ჩვენ გთავაზობთ უგემრიელეს მინი-პანკეიკებს, ნოყიერ კომბოებსა და პრემიუმ კლასის ყავას. საუკეთესო ადგილი საუზმისა და შესვენებისთვის ბათუმში. შეუკვეთეთ მიტანის სერვისით ან გვესტუმრეთ!</p>
+            </div>
+
+            <div class="section-title">პოპულარული მენიუ</div>
+            
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <div class="card-img-container">
+                        <span class="badge-hit">ჰიტი</span>
+                        <span class="badge-price">25 GEL</span>
+                        <img src="dozen-choco.jpg" alt="Pancakes Dozen Choco Cream OL">
+                    </div>
+                    <div class="card-body">
+                        <h3>პანკეიკები "Dozen" შოკოლადით / კრემით OL</h3>
+                        <ul>
+                            <li>12x საფირმო მინი-პანკეიკი (12x80გრ)</li>
+                            <li>საფირმო ხელნაკეთი კრემი "ONE Lari" (80გრ)</li>
+                            <li>პრემიუმ კლასის გამდნარი შოკოლადი (50გრ)</li>
+                            <li>ხრაშუნა ნიგოზი (10გრ)</li>
+                        </ul>
+                        <a href="https://glovoapp.com/" target="_blank" class="btn-glovo">შეუკვეთე Glovo-თი</a>
+                    </div>
                 </div>
-                <div class="info-card">
-                    <div style="font-size: 24px; margin-bottom: 8px;">🕒</div>
-                    <div style="font-weight: 600; color: #ff9900;">Working Hours</div>
-                    <div style="font-size: 14px; line-height: 1.4;">Every day<br><span style="font-weight: bold; font-size: 16px; color: #ffffff;">08:00 – 21:00</span></div>
+
+                <div class="menu-card">
+                    <div class="card-img-container">
+                        <span class="badge-hit">ჰიტი</span>
+                        <span class="badge-price">30 GEL</span>
+                        <img src="chicken-cheese-combo.jpg" alt="Combo Chicken Cheese Fresh Orange">
+                    </div>
+                    <div class="card-body">
+                        <h3>კომბო ქათმითა და ყველით / ფორთოხლის ფრეში</h3>
+                        <ul>
+                            <li>4x მარილიანი პანკეიკი ქათმითა და ყველით</li>
+                            <li>2x ნატურალური ფორთოხლის ფრეში (200მლ)</li>
+                            <li>ენერგიისა და ცილის იდეალური ბალანსი სრულყოფილი წახემსებისთვის!</li>
+                        </ul>
+                        <a href="https://glovoapp.com/" target="_blank" class="btn-glovo">შეუკვეთე Glovo-თი</a>
+                    </div>
                 </div>
             </div>
-            <a href="https://maps.google.com/?q=ONE+Lari+Batumi" target="_blank" class="btn-map">🗺️ Open on Maps</a>
+
+            <div class="section-title">ყავის მენიუ</div>
+            <div class="coffee-list">
+                <div class="coffee-item">
+                    <div class="coffee-name">ესპრესო<div class="coffee-desc">კლასიკური ძლიერი და არომატული ყავა</div></div>
+                    <div class="coffee-price">5 GEL</div>
+                </div>
+                <div class="coffee-item">
+                    <div class="coffee-name">ამერიკანო<div class="coffee-desc">ესპრესო ცხელი წყლის დამატებით</div></div>
+                    <div class="coffee-price">6 GEL</div>
+                </div>
+                <div class="coffee-item">
+                    <div class="coffee-name">კაპუჩინო<div class="coffee-desc">ესპრესოს, ორთქლზე გაცხელებული რძისა და ნაზი ქაფის ბალანსი</div></div>
+                    <div class="coffee-price">7 GEL</div>
+                </div>
+                <div class="coffee-item">
+                    <div class="coffee-name">ლატე / აის ლატე<div class="coffee-desc">ნაზი ესპრესო ბევრი რძით (შესაძლებელია ცივიც)</div></div>
+                    <div class="coffee-price">8 GEL</div>
+                </div>
+                <div class="coffee-item">
+                    <div class="coffee-name">ფლეთ უაიტი<div class="coffee-desc">ორმაგი ესპრესო აბრეშუმისებრი რძის ქაფით</div></div>
+                    <div class="coffee-price">8 GEL</div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h2>სამუშაო საათები და მისამართი</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div style="font-size: 24px; margin-bottom: 8px;">📍</div>
+                        <div style="font-weight: 600; color: #ff9900;">მისამართი</div>
+                        <div style="font-size: 14px; line-height: 1.4;">ვახტანგ გორგასლის ქ. 79 / მელიქიშვილის ქ. 45<br><span style="color: #8c8c8c;">ბათუმი, საქართველო</span></div>
+                    </div>
+                    <div class="info-card">
+                        <div style="font-size: 24px; margin-bottom: 8px;">🕒</div>
+                        <div style="font-weight: 600; color: #ff9900;">სამუშაო საათები</div>
+                        <div style="font-size: 14px; line-height: 1.4;">ყოველ დღე<br><span style="font-weight: bold; font-size: 16px; color: #ffffff;">08:00 – 22:00</span></div>
+                    </div>
+                </div>
+                <a href="https://maps.google.com" target="_blank" class="btn-map">🗺️ რუკაზე გახსნა</a>
+            </div>
         </div>
+
+        <div id="lang-ru" class="lang-section">
+            <div class="hero-seo">
+                <h1>Завтраки, Панкейки и Кофе в Батуми</h1>
+                <p>Добро пожаловать в ONE Lari! Мы готовим фирменные мини-панкейки, сытные комбо-наборы и отличный спешелти кофе. Идеальное место для вкусного завтрака и перекуса в Батуми. Заказывайте доставку прямо к дому или приходите в гости!</p>
+            </div>
+
+            <div class="section-title">Популярно в ONE Lari</div>
+            
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <div class="card-img-container">
+                        <span class="badge-hit">Хит доставки</span>
+                        <span class="badge-price">25 GEL</span>
+                        <img src="dozen-choco.jpg" alt="Панкейки Дюжина Шоколад и Крем">
+                    </div>
+                    <div class="card-body">
+                        <h3>Панкейки "Дюжина" Шоколад / Крем OL</h3>
+                        <ul>
+                            <li>12x Фирменных мини-панкейков (12х80г)</li>
+                            <li>Домашний нежный крем "ONE Lari" (80г)</li>
+                            <li>Премиальный растопленный шоколад (50г)</li>
+                            <li>Хрустящие дробленые орехи (10г)</li>
+                        </ul>
+                        <a href="https://glovoapp.com/" target="_blank" class="btn-glovo">Заказать через Glovo</a>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <div class="card-img-container">
+                        <span class="badge-hit">Хит доставки</span>
+                        <span class="badge-price">30 GEL</span>
+                        <img src="chicken-cheese-combo.jpg" alt="Комбо сытный панкейк с курицей и сыром">
+                    </div>
+                    <div class="card-body">
+                        <h3>Комбо Курица-Сыр / Апельсиновый Фреш</h3>
+                        <ul>
+                            <li>4x Сытных панкейка с начинкой из курицы и нежного сыра</li>
+                            <li>2x Свежевыжатых апельсиновых сока (200мл)</li>
+                            <li>Отличный баланс макронутриентов для идеального питательного перекуса!</li>
+                        </ul>
+                        <a href="https://glovoapp.com/" target="_blank" class="btn-glovo">Заказать через Glovo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-title">Кофейная Карта (Спешелти Кофе)</div>
+            <div class="coffee-list">
+                <div class="coffee-item">
+                    <div class="coffee-name">Эспрессо<div class="coffee-desc">Классический насыщенный плотный вкус</div></div>
+                    <div class="coffee-price">5 GEL</div>
+                </div>
+                <div class="coffee-item">
+                    <div class="coffee-name">Американо<div class="coffee-desc">Мягкий эспрессо с добавлением горячей воды</div></div>
+                    <div class="coffee-price">6 GEL</div>
+                </div>
+                <div class="coffee-item">
+                    <div class="coffee-name">Капучино<div class="coffee-desc">Идеальный баланс эспрессо, нежного молока и шелковистой пенки</div></div>
+                    <div class="coffee-price">7 GEL</div>
+                </div>
+                <div class="coffee-item">
+                    <div class="coffee-name">Латте / Айс Латте<div class="coffee-desc">Кофейный классический напиток с большим количеством молока</div></div>
+                    <div class="coffee-price">8 GEL</div>
+                </div>
+                <div class="coffee-item">
+                    <div class="coffee-name">Флэт Уайт<div class="coffee-desc">Двойная порция эспрессо с бархатистой молочной микропеной</div></div>
+                    <div class="coffee-price">8 GEL</div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h2>Где мы находимся и часы работы</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div style="font-size: 24px; margin-bottom: 8px;">📍</div>
+                        <div style="font-weight: 600; color: #ff9900;">Наш адрес</div>
+                        <div style="font-size: 14px; line-height: 1.4;">ул. Вахтанга Горгасали, 79 / ул. Меликишвили, 45<br><span style="color: #8c8c8c;">Батуми, Грузия</span></div>
+                    </div>
+                    <div class="info-card">
+                        <div style="font-size: 24px; margin-bottom: 8px;">🕒</div>
+                        <div style="font-weight: 600; color: #ff9900;">Мы открыты</div>
+                        <div style="font-size: 14px; line-height: 1.4;">Каждый день<br><span style="font-weight: bold; font-size: 16px; color: #ffffff;">08:00 – 22:00</span></div>
+                    </div>
+                </div>
+                <a href="https://maps.google.com" target="_blank" class="btn-map">🗺️ Открыть на Google Картах</a>
+            </div>
+        </div>
+
     </div>
 
-    <div id="lang-ka" class="lang-section">
-        <h2 class="lang-title">პოპულარული ONE Lari-ში</h2>
-        <div class="grid">
-            <div class="card">
-                <div class="badge">🔥 TOP მიწოდება</div>
-                <div class="img-container">
-                    <img src="dozen-choco.png" alt="Pancakes Dozen">
-                    <div class="price">25 GEL</div>
-                </div>
-                <div class="card-content">
-                    <div>
-                        <h3 class="card-title">Pancakes "Dozen" Choco / Cream OL</h3>
-                        <p class="card-text">• 12х ბრენდირებული ბლინები (12х80გ)<br>• კრემი "ONE Lari" (80გ)<br>• შოკოლადი (50გ)<br>• თხილი (10გ)</p>
-                    </div>
-                    <a href="https://glovoapp.com/en/ge/batumi/stores/one-lari-bat?productId=22941803779&externalProductId=83" target="_blank" class="btn-order">შეკვეთა Glovo-ს საშუალებით</a>
-                </div>
-            </div>
-            <div class="card">
-                <div class="badge">🔥 TOP მიწოდება</div>
-                <div class="img-container">
-                    <img src="chicken-cheese-combo.png" alt="Combo Chicken-Cheese">
-                    <div class="price">30 GEL</div>
-                </div>
-                <div class="card-content">
-                    <div>
-                        <h3 class="card-title">Combo Chicken-Cheese / Fresh Orange</h3>
-                        <p class="card-text">• 4х ბლინი ქათმით და ყველით<br>• 2х ფორთოხლის ფრეში (200მლ)<br>• მაკრონუტრიენტების შესანიშნავი ბალანსი იდეალური წახემსებისთვის!</p>
-                    </div>
-                    <a href="https://glovoapp.com/en/ge/batumi/stores/one-lari-bat?productId=33198094944&externalProductId=f6c37c20-9d19-42f8-a71d-ff158a3ea6ca" target="_blank" class="btn-order">შეკვეთა Glovo-ს საშუალებით</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="info-box">
-            <h2>სად ვართ</h2>
-            <div class="info-grid">
-                <div class="info-card">
-                    <div style="font-size: 24px; margin-bottom: 8px;">📍</div>
-                    <div style="font-weight: 600; color: #ff9900;">მისამართი</div>
-                    <div style="font-size: 14px; line-height: 1.4;">ფარნავაზ მეფის ქ. 79 / მელიქიშვილის ქ. 45<br><span style="color: #8c8c8c;">ბათუმი, საქართველო</span></div>
-                </div>
-                <div class="info-card">
-                    <div style="font-size: 24px; margin-bottom: 8px;">🕒</div>
-                    <div style="font-weight: 600; color: #ff9900;">სამუშაო საათები</div>
-                    <div style="font-size: 14px; line-height: 1.4;">ყოველ დღე<br><span style="font-weight: bold; font-size: 16px; color: #ffffff;">08:00 – 21:00</span></div>
-                </div>
-            </div>
-            <a href="https://maps.google.com/?q=ONE+Lari+Batumi" target="_blank" class="btn-map">🗺️ რუკაზე გახსნა</a>
-        </div>
-    </div>
-
-    <div id="lang-ru" class="lang-section">
-        <h2 class="lang-title">Популярно в ONE Lari</h2>
-        <div class="grid">
-            <div class="card">
-                <div class="badge">🔥 ХИТ ДОСТАВКИ</div>
-                <div class="img-container">
-                    <img src="dozen-choco.png" alt="Pancakes Dozen">
-                    <div class="price">25 GEL</div>
-                </div>
-                <div class="card-content">
-                    <div>
-                        <h3 class="card-title">Pancakes "Dozen" Choco / Cream OL</h3>
-                        <p class="card-text">• 12х Фирменные панкейки (12х80г)<br>• Крем "ONE Lari" (80г)<br>• Chocolate (50г)<br>• Орехи (10г)</p>
-                    </div>
-                    <a href="https://glovoapp.com/en/ge/batumi/stores/one-lari-bat?productId=22941803779&externalProductId=83" target="_blank" class="btn-order">Заказать через Glovo</a>
-                </div>
-            </div>
-            <div class="card">
-                <div class="badge">🔥 ХИТ ДОСТАВКИ</div>
-                <div class="img-container">
-                    <img src="chicken-cheese-combo.png" alt="Combo Chicken-Cheese">
-                    <div class="price">30 GEL</div>
-                </div>
-                <div class="card-content">
-                    <div>
-                        <h3 class="card-title">Combo Chicken-Cheese / Fresh Orange</h3>
-                        <p class="card-text">• 4х Pancake Chicken-Cheese<br>• 2х Fresh orange (200мл)<br>• Отличный balance макронутриентов для идеального перекуса!</p>
-                    </div>
-                    <a href="https://glovoapp.com/en/ge/batumi/stores/one-lari-bat?productId=33198094944&externalProductId=f6c37c20-9d19-42f8-a71d-ff158a3ea6ca" target="_blank" class="btn-order">Заказать через Glovo</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="info-box">
-            <h2>Где мы находимся</h2>
-            <div class="info-grid">
-                <div class="info-card">
-                    <div style="font-size: 24px; margin-bottom: 8px;">📍</div>
-                    <div style="font-weight: 600; color: #ff9900;">Наш адрес</div>
-                    <div style="font-size: 14px; line-height: 1.4;">ул. Фарнаваз Мепе, 79 / ул. Меликишвили, 45<br><span style="color: #8c8c8c;">Батуми, Грузия</span></div>
-                </div>
-                <div class="info-card">
-                    <div style="font-size: 24px; margin-bottom: 8px;">🕒</div>
-                    <div style="font-weight: 600; color: #ff9900;">Мы открыты</div>
-                    <div style="font-size: 14px; line-height: 1.4;">Каждый день<br><span style="font-weight: bold; font-size: 16px; color: #ffffff;">08:00 – 21:00</span></div>
-                </div>
-            </div>
-            <a href="https://maps.google.com/?q=ONE+Lari+Batumi" target="_blank" class="btn-map">🗺️ Открыть на картах</a>
-        </div>
-    </div>
-
-</div>
-
+    <script>
+        function switchLang(langId) {
+            var sections = document.querySelectorAll('.lang-section');
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].classList.remove('active-lang');
+            }
+            var targetSection = document.getElementById('lang-' + langId);
+            if (targetSection) {
+                targetSection.classList.add('active-lang');
+            }
+            var buttons = document.querySelectorAll('.lang-btn');
+            for (var j = 0; j < buttons.length; j++) {
+                buttons[j].classList.remove('active');
+            }
+            event.currentTarget.classList.add('active');
+        }
+    </script>
 </body>
 </html>
