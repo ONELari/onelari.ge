@@ -6,269 +6,34 @@
     <title>ONE Lari | Batumi</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body {
-            background-color: #121212;
-            color: #ffffff;
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        /* Шапка с логотипом */
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-            border-bottom: 1px solid #262626;
-            margin-bottom: 30px;
-        }
-        .logo-block {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .logo-img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            object-fit: cover;
-            background-color: #262626;
-            border: 2px solid #ff9900;
-        }
-        .logo {
-            font-size: 24px;
-            font-weight: 800;
-            color: #ffffff;
-            letter-spacing: 1px;
-        }
-        .logo span {
-            color: #ff9900;
-        }
-
-        /* Переключатель языков на чистом CSS */
-        .lang-switcher {
-            display: flex;
-            gap: 10px;
-        }
-        .lang-switcher label {
-            background: #1a1a1a;
-            color: #ffffff;
-            border: 1px solid #333333;
-            padding: 8px 16px;
-            font-size: 14px;
-            font-weight: 700;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        /* Скрытые радио-кнопки */
-        input[type="radio"] {
-            display: none;
-        }
-
-        /* Логика показа разделов и подсветки кнопок */
-        .lang-section {
-            display: none;
-        }
-
-        #lang-toggle-en:checked ~ #lang-en,
-        #lang-toggle-ka:checked ~ #lang-ka,
-        #lang-toggle-ru:checked ~ #lang-ru {
-            display: block;
-        }
-
-        #lang-toggle-en:checked ~ .header .lang-switcher label[for="lang-toggle-en"],
-        #lang-toggle-ka:checked ~ .header .lang-switcher label[for="lang-toggle-ka"],
-        #lang-toggle-ru:checked ~ .header .lang-switcher label[for="lang-toggle-ru"] {
-            background: #ff9900;
-            color: #000000;
-            border-color: #ff9900;
-        }
-
-        /* Стили контента */
-        .lang-title {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-left: 4px solid #ff9900;
-            padding-left: 15px;
-        }
-        .grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 25px;
-            justify-content: center;
-            margin-bottom: 40px;
-        }
-        .card {
-            background: #1a1a1a;
-            border-radius: 12px;
-            overflow: hidden;
-            width: 100%;
-            max-width: 360px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-            display: flex;
-            flex-direction: column;
-            position: relative;
-        }
-        .badge {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: #e60000;
-            color: #ffffff;
-            font-weight: 800;
-            padding: 6px 12px;
-            border-radius: 4px;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            z-index: 10;
-            box-shadow: 0 2px 8px rgba(230,0,0,0.4);
-        }
-        .img-container {
-            position: relative;
-            width: 100%;
-            height: 250px;
-            background: #262626;
-        }
-        .img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .price {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: #ff9900;
-            color: #000000;
-            font-weight: 700;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 16px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-            z-index: 10;
-        }
-        .card-content {
-            padding: 20px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .card-title {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: #ffffff;
-        }
-        .card-text {
-            font-size: 13px;
-            color: #a6a6a6;
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
-        .btn-order {
-            background: #ff9900;
-            color: #000000;
-            text-align: center;
-            padding: 12px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 14px;
-            transition: all 0.3s;
-            display: block;
-            box-shadow: 0 4px 12px rgba(255, 153, 0, 0.2);
-        }
-        .info-box {
-            background-color: #1a1a1a;
-            padding: 40px 20px;
-            border-radius: 12px;
-            text-align: center;
-            max-width: 800px;
-            margin: 20px auto;
-        }
-        .info-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 35px;
-        }
-        .info-card {
-            background: #262626;
-            padding: 20px;
-            border-radius: 8px;
-            min-width: 250px;
-            flex: 1;
-        }
-        .btn-map {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #ff9900;
-            color: #000000;
-            text-decoration: none;
-            padding: 15px 35px;
-            font-weight: 700;
-            font-size: 16px;
-            border-radius: 50px;
-            box-shadow: 0 4px 15px rgba(255, 153, 0, 0.3);
-        }
-        .contacts-box {
-            background-color: #1a1a1a;
-            padding: 30px 20px;
-            border-radius: 12px;
-            text-align: center;
-            max-width: 800px;
-            margin: 20px auto;
-            border-top: 2px solid #262626;
-        }
-        .contact-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-        .btn-phone {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: #262626;
-            color: #ffffff;
-            text-decoration: none;
-            padding: 15px 30px;
-            font-weight: 600;
-            font-size: 16px;
-            border-radius: 8px;
-            min-width: 240px;
-            border: 1px solid #333333;
-        }
-        .btn-tg {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: #229ED9;
-            color: #ffffff;
-            text-decoration: none;
-            padding: 15px 30px;
-            font-weight: 600;
-            font-size: 16px;
-            border-radius: 8px;
-            min-width: 240px;
-            box-shadow: 0 4px 12px rgba(34, 158, 217, 0.2);
-        }
+        body { background-color: #121212; color: #ffffff; font-family: 'Montserrat', sans-serif; margin: 0; padding: 0; box-sizing: border-box; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .header { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid #262626; margin-bottom: 30px; }
+        .logo-block { display: flex; align-items: center; gap: 15px; }
+        .logo-img { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; background-color: #262626; border: 2px solid #ff9900; }
+        .logo { font-size: 24px; font-weight: 800; color: #ffffff; letter-spacing: 1px; }
+        .logo span { color: #ff9900; }
+        .lang-switcher { display: flex; gap: 10px; }
+        .lang-switcher label { background: #1a1a1a; color: #ffffff; border: 1px solid #333333; padding: 8px 16px; font-size: 14px; font-weight: 700; border-radius: 6px; cursor: pointer; transition: all 0.3s ease; }
+        input[type="radio"] { display: none; }
+        .lang-section { display: none; }
+        #lang-toggle-en:checked ~ #lang-en, #lang-toggle-ka:checked ~ #lang-ka, #lang-toggle-ru:checked ~ #lang-ru { display: block; }
+        #lang-toggle-en:checked ~ .header .lang-switcher label[for="lang-toggle-en"], #lang-toggle-ka:checked ~ .header .lang-switcher label[for="lang-toggle-ka"], #lang-toggle-ru:checked ~ .header .lang-switcher label[for="lang-toggle-ru"] { background: #ff9900; color: #000000; border-color: #ff9900; }
+        .lang-title { font-size: 28px; font-weight: 700; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 1px; border-left: 4px solid #ff9900; padding-left: 15px; }
+        .grid { display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; margin-bottom: 40px; }
+        .card { background: #1a1a1a; border-radius: 12px; overflow: hidden; width: 100%; max-width: 360px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); display: flex; flex-direction: column; position: relative; }
+        .badge { position: absolute; top: 15px; left: 15px; background: #e60000; color: #ffffff; font-weight: 800; padding: 6px 12px; border-radius: 4px; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; z-index: 10; box-shadow: 0 2px 8px rgba(230,0,0,0.4); }
+        .img-container { position: relative; width: 100%; height: 250px; background: #262626; }
+        .img-container img { width: 100%; height: 100%; object-fit: cover; }
+        .price { position: absolute; top: 15px; right: 15px; background: #ff9900; color: #000000; font-weight: 700; padding: 6px 14px; border-radius: 20px; font-size: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.4); z-index: 10; }
+        .card-content { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .card-title { font-size: 18px; font-weight: 700; margin-bottom: 10px; color: #ffffff; }
+        .card-text { font-size: 13px; color: #a6a6a6; line-height: 1.5; margin-bottom: 20px; }
+        .btn-order { background: #ff9900; color: #000000; text-align: center; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 14px; transition: all 0.3s; display: block; box-shadow: 0 4px 12px rgba(255, 153, 0, 0.2); }
+        .info-box { background-color: #1a1a1a; padding: 40px 20px; border-radius: 12px; text-align: center; max-width: 800px; margin: 20px auto; }
+        .info-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-bottom: 35px; }
+        .info-card { background: #262626; padding: 20px; border-radius: 8px; min-width: 250px; flex: 1; }
+        .btn-map { display: inline-flex; align-items: center; justify-content: center; background-color: #ff9900; color: #000000; text-decoration: none; padding: 15px 35px; font-weight: 700; font-size: 16px; border-radius: 50px; box-shadow: 0 4px 15px rgba(255, 153, 0, 0.3); }
     </style>
 </head>
 <body>
@@ -281,7 +46,7 @@
 
     <header class="header">
         <div class="logo-block">
-            <img src="logo.jpg" alt="" class="logo-img" onerror="this.style.display='none'">
+            <img src="logo.png" alt="" class="logo-img" onerror="this.src='logo.jpg';">
             <div class="logo">ONE <span>Lari</span></div>
         </div>
         <div class="lang-switcher">
@@ -297,18 +62,13 @@
             <div class="card">
                 <div class="badge">🔥 DELIVERY HIT</div>
                 <div class="img-container">
-                    <img src="dozen-choco.jpg" alt="Pancakes Dozen Choco">
+                    <img src="dozen-choco.png" alt="Pancakes Dozen" onerror="this.src='dozen-choco.jpg';">
                     <div class="price">25 GEL</div>
                 </div>
                 <div class="card-content">
                     <div>
                         <h3 class="card-title">Pancakes "Dozen" Choco / Cream OL</h3>
-                        <p class="card-text">
-                            • 12х Signature pancakes (12х80g)<br>
-                            • Cream "ONE Lari" (80g)<br>
-                            • Chocolate (50g)<br>
-                            • Nuts (10g)
-                        </p>
+                        <p class="card-text">• 12х Signature pancakes (12х80g)<br>• Cream "ONE Lari" (80g)<br>• Chocolate (50g)<br>• Nuts (10g)</p>
                     </div>
                     <a href="https://glovoapp.com/en/ge/batumi/stores/one-lari-bat?productId=22941803779&externalProductId=83" target="_blank" class="btn-order">Order via Glovo</a>
                 </div>
@@ -316,17 +76,13 @@
             <div class="card">
                 <div class="badge">🔥 DELIVERY HIT</div>
                 <div class="img-container">
-                    <img src="chicken-cheese-combo.jpg" alt="Combo Chicken-Cheese">
+                    <img src="chicken-cheese-combo.jpg" alt="Combo Chicken-Cheese" onerror="this.src='chicken-cheese-combo.png';">
                     <div class="price">30 GEL</div>
                 </div>
                 <div class="card-content">
                     <div>
                         <h3 class="card-title">Combo Chicken-Cheese / Fresh Orange</h3>
-                        <p class="card-text">
-                            • 4х Pancake Chicken-Cheese<br>
-                            • 2х Fresh orange (200ml)<br>
-                            • Excellent balance of macronutrients for a perfect snack!
-                        </p>
+                        <p class="card-text">• 4х Pancake Chicken-Cheese<br>• 2х Fresh orange (200ml)<br>• Excellent balance of macronutrients for a perfect snack!</p>
                     </div>
                     <a href="https://glovoapp.com/en/ge/batumi/stores/one-lari-bat?productId=33198094944&externalProductId=f6c37c20-9d19-42f8-a71d-ff158a3ea6ca" target="_blank" class="btn-order">Order via Glovo</a>
                 </div>
@@ -334,7 +90,7 @@
         </div>
 
         <div class="info-box">
-            <h2 style="font-size: 24px; margin-bottom: 10px; text-transform: uppercase;">Our Location</h2>
+            <h2>Our Location</h2>
             <div class="info-grid">
                 <div class="info-card">
                     <div style="font-size: 24px; margin-bottom: 8px;">📍</div>
@@ -347,15 +103,7 @@
                     <div style="font-size: 14px; line-height: 1.4;">Every day<br><span style="font-weight: bold; font-size: 16px; color: #ffffff;">08:00 – 22:00</span></div>
                 </div>
             </div>
-            <a href="https://www.google.com/maps/search/?api=1&query=ONE+Lari+Gorgasali+79+Batumi" target="_blank" class="btn-map">🗺️ Open on Maps / Navigator</a>
-        </div>
-
-        <div class="contacts-box">
-            <h3 style="font-size: 18px; margin-bottom: 20px; text-transform: uppercase;">Contact Us</h3>
-            <div class="contact-buttons">
-                <a href="tel:+995511157979" class="btn-phone">📞 +995 511 15 79 79</a>
-                <a href="https://t.me/+tmnRjcS_K_I2MGU6" target="_blank" class="btn-tg">✈️ Message on Telegram</a>
-            </div>
+            <a href="https://maps.google.com/?q=79+Gorgasali+St,+Batumi" target="_blank" class="btn-map">🗺️ Open on Maps</a>
         </div>
     </div>
 
@@ -365,18 +113,13 @@
             <div class="card">
                 <div class="badge">🔥 TOP მიწოდება</div>
                 <div class="img-container">
-                    <img src="dozen-choco.jpg" alt="Pancakes Dozen Choco">
+                    <img src="dozen-choco.png" alt="Pancakes Dozen" onerror="this.src='dozen-choco.jpg';">
                     <div class="price">25 GEL</div>
                 </div>
                 <div class="card-content">
                     <div>
                         <h3 class="card-title">Pancakes "Dozen" Choco / Cream OL</h3>
-                        <p class="card-text">
-                            • 12х ბრენდირებული ბლინები (12х80გ)<br>
-                            • კრემი "ONE Lari" (80გ)<br>
-                            • შოკოლადი (50გ)<br>
-                            • თხილი (10გ)
-                        </p>
+                        <p class="card-text">• 12х ბრენდირებული ბლინები (12х80გ)<br>• კრემი "ONE Lari" (80გ)<br>• შოკოლადი (50გ)<br>• თხილი (10გ)</p>
                     </div>
                     <a href="https://glovoapp.com/en/ge/batumi/stores/one-lari-bat?productId=22941803779&externalProductId=83" target="_blank" class="btn-order">შეკვეთა Glovo-ს საშუალებით</a>
                 </div>
@@ -384,17 +127,13 @@
             <div class="card">
                 <div class="badge">🔥 TOP მიწოდება</div>
                 <div class="img-container">
-                    <img src="chicken-cheese-combo.jpg" alt="Combo Chicken-Cheese">
+                    <img src="chicken-cheese-combo.jpg" alt="Combo Chicken-Cheese" onerror="this.src='chicken-cheese-combo.png';">
                     <div class="price">30 GEL</div>
                 </div>
                 <div class="card-content">
                     <div>
                         <h3 class="card-title">Combo Chicken-Cheese / Fresh Orange</h3>
-                        <p class="card-text">
-                            • 4х ბლინი ქათმით და ყველით<br>
-                            • 2х ფორთოხლის ფრეში (200მლ)<br>
-                            • მაკრონუტრიენტების შესანიშნავი ბალანსი იდეალური წახემსებისთვის!
-                        </p>
+                        <p class="card-text">• 4х ბლინი ქათმით და ყველით<br>• 2х ფორთოხლის ფრეში (200მლ)<br>• მაკრონუტრიენტების შესანიშნავი ბალანსი იდეალური წახემსებისთვის!</p>
                     </div>
                     <a href="https://glovoapp.com/en/ge/batumi/stores/one-lari-bat?productId=33198094944&externalProductId=f6c37c20-9d19-42f8-a71d-ff158a3ea6ca" target="_blank" class="btn-order">შეკვეთა Glovo-ს საშუალებით</a>
                 </div>
@@ -402,7 +141,7 @@
         </div>
 
         <div class="info-box">
-            <h2 style="font-size: 24px; margin-bottom: 10px; text-transform: uppercase;">სად ვართ</h2>
+            <h2>სად ვართ</h2>
             <div class="info-grid">
                 <div class="info-card">
                     <div style="font-size: 24px; margin-bottom: 8px;">📍</div>
@@ -415,15 +154,7 @@
                     <div style="font-size: 14px; line-height: 1.4;">ყოველ დღე<br><span style="font-weight: bold; font-size: 16px; color: #ffffff;">08:00 – 22:00</span></div>
                 </div>
             </div>
-            <a href="https://www.google.com/maps/search/?api=1&query=ONE+Lari+Gorgasali+79+Batumi" target="_blank" class="btn-map">🗺️ რუკაზე გახსნა / ნავიგატორი</a>
-        </div>
-
-        <div class="contacts-box">
-            <h3 style="font-size: 18px; margin-bottom: 20px; text-transform: uppercase;">კონტაქტი</h3>
-            <div class="contact-buttons">
-                <a href="tel:+995511157979" class="btn-phone">📞 +995 511 15 79 79</a>
-                <a href="https://t.me/+tmnRjcS_K_I2MGU6" target="_blank" class="btn-tg">✈️ ნაწერი Telegram-ში</a>
-            </div>
+            <a href="https://maps.google.com/?q=79+Gorgasali+St,+Batumi" target="_blank" class="btn-map">🗺️ რუკაზე გახსნა</a>
         </div>
     </div>
 
@@ -433,18 +164,13 @@
             <div class="card">
                 <div class="badge">🔥 ХИТ ДОСТАВКИ</div>
                 <div class="img-container">
-                    <img src="dozen-choco.jpg" alt="Pancakes Dozen Choco">
+                    <img src="dozen-choco.png" alt="Pancakes Dozen" onerror="this.src='dozen-choco.jpg';">
                     <div class="price">25 GEL</div>
                 </div>
                 <div class="card-content">
                     <div>
                         <h3 class="card-title">Pancakes "Dozen" Choco / Cream OL</h3>
-                        <p class="card-text">
-                            • 12х Фирменные панкейки (12х80г)<br>
-                            • Крем "ONE Lari" (80г)<br>
-                            • Шоколад (50г)<br>
-                            • Орехи (10г)
-                        </p>
+                        <p class="card-text">• 12х Фирменные панкейки (12х80г)<br>• Крем "ONE Lari" (80г)<br>• Chocolate (50г)<br>• Орехи (10г)</p>
                     </div>
                     <a href="https://glovoapp.com/en/ge/batumi/stores/one-lari-bat?productId=22941803779&externalProductId=83" target="_blank" class="btn-order">Заказать через Glovo</a>
                 </div>
@@ -452,17 +178,13 @@
             <div class="card">
                 <div class="badge">🔥 ХИТ ДОСТАВКИ</div>
                 <div class="img-container">
-                    <img src="chicken-cheese-combo.jpg" alt="Combo Chicken-Cheese">
+                    <img src="chicken-cheese-combo.jpg" alt="Combo Chicken-Cheese" onerror="this.src='chicken-cheese-combo.png';">
                     <div class="price">30 GEL</div>
                 </div>
                 <div class="card-content">
                     <div>
                         <h3 class="card-title">Combo Chicken-Cheese / Fresh Orange</h3>
-                        <p class="card-text">
-                            • 4х Pancake Chicken-Cheese<br>
-                            • 2х Fresh orange (200мл)<br>
-                            • Отличный баланс макронутриентов для идеального перекуса!
-                        </p>
+                        <p class="card-text">• 4х Pancake Chicken-Cheese<br>• 2х Fresh orange (200мл)<br>• Отличный balance макронутриентов для идеального перекуса!</p>
                     </div>
                     <a href="https://glovoapp.com/en/ge/batumi/stores/one-lari-bat?productId=33198094944&externalProductId=f6c37c20-9d19-42f8-a71d-ff158a3ea6ca" target="_blank" class="btn-order">Заказать через Glovo</a>
                 </div>
@@ -470,28 +192,20 @@
         </div>
 
         <div class="info-box">
-            <h2 style="font-size: 24px; margin-bottom: 10px; text-transform: uppercase;">Где мы находимся</h2>
+            <h2>Где мы находимся</h2>
             <div class="info-grid">
                 <div class="info-card">
                     <div style="font-size: 24px; margin-bottom: 8px;">📍</div>
-                    <div style="font-weight: 600; color: #ff9900;">Наш address</div>
+                    <div style="font-weight: 600; color: #ff9900;">Наш адрес</div>
                     <div style="font-size: 14px; line-height: 1.4;">ул. Горгасали, 79 / ул. Меликишвили, 45<br><span style="color: #8c8c8c;">Батуми, Грузия</span></div>
                 </div>
                 <div class="info-card">
                     <div style="font-size: 24px; margin-bottom: 8px;">🕒</div>
-                    <div style="font-weight: 600; color: #ff9900;">Мы открыты</div>
+                    <div style="font-weight: 600; color: #ff9900;">Мы open</div>
                     <div style="font-size: 14px; line-height: 1.4;">Каждый день<br><span style="font-weight: bold; font-size: 16px; color: #ffffff;">08:00 – 22:00</span></div>
                 </div>
             </div>
-            <a href="https://www.google.com/maps/search/?api=1&query=ONE+Lari+Gorgasali+79+Batumi" target="_blank" class="btn-map">🗺️ Открыть на картах / Навигатор</a>
-        </div>
-
-        <div class="contacts-box">
-            <h3 style="font-size: 18px; margin-bottom: 20px; text-transform: uppercase;">Связаться с нами</h3>
-            <div class="contact-buttons">
-                <a href="tel:+995511157979" class="btn-phone">📞 +995 511 15 79 79</a>
-                <a href="https://t.me/+tmnRjcS_K_I2MGU6" target="_blank" class="btn-tg">✈️ Написать в Telegram</a>
-            </div>
+            <a href="https://maps.google.com/?q=79+Gorgasali+St,+Batumi" target="_blank" class="btn-map">🗺️ Открыть на картах</a>
         </div>
     </div>
 
